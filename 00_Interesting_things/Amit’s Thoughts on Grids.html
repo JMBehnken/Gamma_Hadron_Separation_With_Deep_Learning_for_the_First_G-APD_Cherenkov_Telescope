@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta charset="utf-8"><title>Amit’s Thoughts on Grids</title><meta name="viewport" content="width=500"><link rel="shortcut icon" href="http://www-cs-students.stanford.edu/%7Eamitp/favicon.ico"><link rel="apple-touch-icon" href="http://www-cs-students.stanford.edu/%7Eamitp/red_blob.gif"><link href="https://fonts.googleapis.com/css?family=Roboto+Slab:700%7COpen+Sans%27%20rel=%27stylesheet"><link href="http://disqus.com/embed/comments/" rel="preconnect"><link href="http://a.disquscdn.com/" rel="preconnect"><link rel="canonical" href="Amit%E2%80%99s%20Thoughts%20on%20Grids_files/a_003.html"><link rel="alternate" type="application/atom+xml" title="Blobs in Games - Atom" href="http://simblob.blogspot.com/feeds/posts/default"><meta name="twitter:creator" content="@redblobgames"><meta name="verify-v1" content="82b+h1+tgwLrcTqTiJrqquMvoFVBwMwY11dx63m01zk="><meta name="robots" content="noodp"><script async="" type="text/javascript" src="Amit%E2%80%99s%20Thoughts%20on%20Grids_files/ga.js"></script><script async="" type="text/javascript" src="Amit%E2%80%99s%20Thoughts%20on%20Grids_files/gap.js"></script><script><!--
+            (function() {
+            var link = document.createElement('link');
+            link.href = 'http://fonts.googleapis.com/css?family=Source+Code+Pro:400,700|Source+Sans+Pro:400,400italic,700italic,700';
+            link.rel = 'stylesheet';
+            link.type = 'text/css';
+            if (document.location.hostname != 'localhost') document.getElementsByTagName('html')[0].appendChild(link);
+            })();
+          //--></script><style>
+              body{font-family:"Source Sans Pro", "Open Sans", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "Tahoma", sans-serif;font-size:14px;line-height:1.5;min-height:95%}body.width600{font-size:16px}tt,code,kbd,samp,pre{font-family:"Source Code Pro", monospace, serif, "Segoe UI Symbol", "Symbol";font-size:12px;font-size-adjust:none}.width600 tt,.width600 code,.width600 kbd,.width600 samp,.width600 pre{font-size:14px}nav{font-size:14px}header,h2{text-shadow:0px 2px 5px rgba(0,0,0,0.8);text-rendering:optimizeLegibility;-webkit-font-feature-settings:"kern";-moz-font-feature-settings:"kern";-moz-font-feature-settings:"liga=1,pnum=1,onum=1,kern=1";-ms-font-feature-settings:"liga" 1, "pnum" 1, "onum" 1, "kern" 1;font-kerning:normal}h1{font-size:28px}h1 .subheading{letter-spacing:normal;font-size:14px}.width600 h1{font-size:32px}.width600 h1 .subheading{font-size:16px}sup,sub{position:relative;vertical-align:baseline;font-size:75%;line-height:0;padding-left:2px}sup{top:-0.5em}sub{bottom:-0.25em}*{-moz-box-sizing:border-box;-webkit-box-sizing:border-box;box-sizing:border-box}html,body{margin:0;padding:0}body{background-color:#fff;color:#333}.main{max-width:1075px;margin-left:auto;margin-right:auto;padding:0 40px}header{display:block;text-align:center}h1{margin:0;padding:28px;padding-left:80px;text-align:left}.colored-background{color:#fff;background-color:#bf4040}header,.footer,.divider,h2{color:#fff;background-color:#bf4040;-webkit-font-smoothing:antialiased}header a,.footer a,.divider a,h2 a{color:#f2d9d9}.footer a,.divider a{text-decoration:underline}.comments,.divider-disqus{background-color:#e4e4e0}.comments{padding-bottom:20px;text-shadow:1px 1px 3px #fff}h2{margin:20px 0;padding:10px 40px;font-size:20px;max-width:530px}.width600 h2{max-width:680px}h2 a.anchor{float:right;width:2em;text-align:right;color:#bf4040}h2:hover a.anchor{color:#df9f9f}h3{margin:18px 0;font-size:18px}h3 a.anchor{float:right;width:2em;text-align:right;color:#d6c2c2}h3:hover a.anchor{color:#bf4040}nav{display:block}nav ul{text-align:center;line-height:1.0;margin:0}nav ul li{display:inline-block;padding:2px 5px;text-align:center;width:10%;white-space:nowrap}nav ul li a{display:block;width:100%;font-weight:bold;text-decoration:none}nav ul li.nav:hover{background-color:rgba(0,0,0,0.5);font-weight:bold}nav ul li.navself{background-color:rgba(0,0,0,0.3);font-weight:bold}.topic{margin-left:40px;margin-right:40px;margin-bottom:35px;max-width:450px}.width600 .topic{max-width:600px}header,.divider,h2{border-bottom:1px solid #000}.divider,.footer,h2{border-top:1px solid #000}.divider{min-height:28px;padding-left:2.5em}.divider-disqus{padding-top:14px;text-align:center}.footer{clear:both;padding:7px 14px;border-top:1px solid #000}.footer p{max-width:40em;line-height:1.1}h2:target{-webkit-animation:target-attention 0.4s 1;-moz-animation:target-attention 0.4s 1}@-webkit-keyframes target-attention{0%{-webkit-transform:scale(1.1);transform:scale(1.1)}100%{-webkit-transform:scale(1);transform:scale(1.1)}}@-moz-keyframes target-attention{0%{-moz-transform:scale(1.1);transform:scale(1.1)}100%{-moz-transform:scale(1);transform:scale(1)}}h2:target{font-size:24px}div:target{border:1px dashed #888}kbd kbd{padding:1px 7px;margin:0px 1px 3px 1px;display:inline-block;font-size:11px;font-family:"Helvetica Neue", "Helvetica", "Tahoma", "Arial", sans-serif;white-space:nowrap;background:#ddd;color:#242;border:1px solid rgba(0,0,0,0.2);border-radius:3px;box-shadow:inset 0 0 1px 1px #fff,0 2px 0 rgba(0,0,0,0.3)}samp,kbd{background-color:#f4f4f0}code,samp{color:#442}kbd{margin:0 7px;color:#252}.topic>img{max-width:100%;-ms-interpolation-mode:bicubic}.topic figcaption{font-size:12px;text-align:center}a{color:#bf4040;text-decoration:none}a:hover{text-decoration:underline}.topic p,.topic li{text-align:justify;-moz-hyphens:auto;-ms-hyphens:auto;-webkit-hyphens:auto;hyphens:auto}nav,figure,abbr,acronym,code,kbd,samp,tt,var,pre{-moz-hyphens:none;-ms-hyphens:none;-webkit-hyphens:none;hyphens:none}p,ul,ol,ul.spaced>li,ol.spaced>li{margin:1.25em 0}ul ul,ul ol,ol ul,ol ol,li ul,li ol{margin:0}ul,ol{margin-left:0;padding-left:21px}dt{font-weight:bold}pre{max-width:450px;line-height:1.4;font-size:12px;padding:4px 12px;overflow:auto;white-space:pre-wrap;border-top:1px solid #ccc;border-bottom:1px solid #ccc;border-left-width:0;border-right-width:0}.width600 pre{max-width:600px}.width600 pre{font-size:14px}pre::-webkit-scrollbar{height:1em}pre::-webkit-scrollbar-thumb:horizontal{border-radius:0.5em;background:rgba(0,0,0,0.4)}ul pre,ol pre{width:450px}pre.simple,.comments pre{overflow:visible;width:100%;border:none;background:transparent;background-color:transparent;box-shadow:none}pre.snippet,pre.src{border-top-style:dashed;border-bottom-style:dashed}.topic>pre:only-child{padding-bottom:14px;border-bottom:1px solid rgba(0,0,0,0.5)}blockquote{font-style:italic}table.standard{border:1px solid rgba(0,0,0,0.5);border-collapse:collapse}table.standard th{background-color:#f8f8f8;background:linear-gradient(to bottom, #f8f8f8,#f8f8f8,#f0f0f0)}table.standard td{background-color:#fff}table.standard th,table.standard td{border:1px solid rgba(0,0,0,0.5)}p.note,div.note>p{margin:1em;padding:1em;background:#eee;border:1px solid #ddd;box-shadow:0 8px 6px -6px rgba(0,0,0,0.4)}svg{overflow:hidden}tt,code{padding:0 2px}address{max-width:450px;text-align:right}.footer address{text-align:left}@media only screen and (max-width: 700px){.main{padding:0 10px}.topic{margin-left:10px;margin-right:10px}h2{max-width:400px}pre{font-size:10px}.width600 pre{font-size:11px}nav{font-size:12px}}@media only screen and (max-width: 600px){header,.footer{font-size:12px}h1{text-align:center;font-size:14px;padding:14px}nav span.longnav,nav form{display:none}nav ul li{width:15%}.omit-if-narrow,nav ul li.omit-if-narrow{display:none}pre{width:auto;font-size:9px}nav{font-size:10px}}form{margin:0}input[type="text"]{max-width:100%;border:1px solid rgba(0,0,0,0.7);background-color:#f8f8f4;color:#000;text-align:center;font-weight:bold}input[type="text"]:focus{background-color:#fffff4}input::-webkit-input-placeholder{color:#aaa}input::-moz-placeholder{color:#aaa}.TODO{color:#bf4040;background:#e8e3e3;border:1px solid #bf4040;margin-left:0.5ex}.DONE{color:#4040bf;background:#e3e3e8;border:1px solid #4040bf}.org-src-container pre.src{white-space:pre;font-size:12px}pre.src .comment-delimiter,pre.src .nxml-comment-delimiter{color:#4488ff}pre.src .comment,pre.src .nxml-comment-content{color:#006699}pre.src .keyword{color:#406abf;font-weight:bold}pre.src .builtin{color:#508b20}pre.src .warning{color:#cc0000}pre.src .function-name{color:#268bd2;font-weight:bold}pre.src .variable-name{color:#00008b}pre.src .type{color:#6c71c4}pre.src .constant-face{color:#d33682}pre.src .doc{color:#666666;background-color:#e2e6e8}pre.src .string{color:#888888}pre.src .preprocessor{color:#859900}pre.src .negation-char,pre.src .sh-escaped-newline{color:#ff0000}pre.src .todo{color:#ffffff;background:#dc322f}pre.src .note{color:#ffffff;background:#2aa198}pre.src .hack{color:#ffffff;background:#859900}pre.src .paren{color:#a0a090;font-weight:bold}pre.src .minor-control-construct{color:#268bd2}pre.src .major-control-construct{color:#bf4040}pre.src-emacs-lisp .paren{color:#c9c9c4}pre.src-sh .string,pre.src-sh .comment{color:inherit}pre.src-python .highlight-indentation{border-right:2px solid #eeeeee}pre.src-xml .nxml-element-local-name{color:#406abf;font-weight:normal}pre.src-xml .nxml-tag-delimiter,pre.src-xml .nxml-tag-slash{color:#9cabc9;font-weight:bold}table.standard td.left,table.standard th.left{text-align:left}table.standard td.center,table.standard th.center{text-align:center}table.standard td.right,table.standard th.right{text-align:right}*[class^="section-number"]{color:#966}h2 *[class^="section-number"]{color:#e6b3b3;text-align:right;display:inline-block;margin-left:-40px;width:40px}h3 *[class^="section-number"]{color:#e6b3b3;background-color:#bf4040;border-top:1px solid black;border-bottom:1px solid black;text-shadow:0px 2px 5px rgba(0,0,0,0.8);text-rendering:optimizeLegibility;text-align:center;display:inline-block;padding:4px 0;width:40px;margin-left:-44px}@media only screen and (max-width: 700px){h3 *[class^="section-number"]{margin-left:-10px}}#table-of-contents{background-color:#fff;margin-left:40px;padding-left:40px;width:300px;float:right}#table-of-contents:after{clear:both}#table-of-contents h2{text-shadow:none;color:#000;background-color:transparent;background-image:none;padding:0;border-bottom:none;border-top:none}@media print{body{font-family:"Book Antiqua", "Times New Roman", serif;font-size:12pt;line-height:1.25}h1,h2,h3,h4,h5,h6,.footer,.divider-disqus{font-family:"Helvetica", sans-serif;font-size:12pt;text-rendering:optimizeLegibility}h1{font-size:18pt}h1 .subheading{font-size:12pt}header,h2{text-shadow:none}tt,code,kbd,samp,pre{font-family:"Courier", "Courier New", monospace;font-size:12pt}nav,.comments{display:none}}header,.footer,.divider,h2{background-image:url("/~amitp/transparent-blob.png"),url("/~amitp/transparent-blob.png");background-position:0 0, 16px 16px}
+
+            
+      h2, h3 {
+      clear: both;
+      }
+
+      table.centered td {
+      text-align: center;
+      }
+
+      .floating {
+      float:right;
+      margin: 0 2em 2em 2em;
+      }
+
+      .figure {
+      border: 1px solid #aaa;
+      border-bottom-color: #999;
+      border-right-color: #999;
+      background-color: #ddd;
+      
+      text-align: center;
+      padding: 1em;
+      }
+    </style><script type="text/javascript" async="" src="Amit%E2%80%99s%20Thoughts%20on%20Grids_files/embed.js"></script><link rel="prefetch" href="Amit%E2%80%99s%20Thoughts%20on%20Grids_files/a_data/lounge.css"><link rel="prefetch" href="Amit%E2%80%99s%20Thoughts%20on%20Grids_files/a_data/common.js"><link rel="prefetch" href="Amit%E2%80%99s%20Thoughts%20on%20Grids_files/a_data/lounge.js"><link rel="prefetch" href="Amit%E2%80%99s%20Thoughts%20on%20Grids_files/a_data/config.js"></head><link href="Amit%E2%80%99s%20Thoughts%20on%20Grids_files/css.css" rel="stylesheet" type="text/css"><body class="gameprog"><header><h1 role="banner"><div class="title">Amit’s Thoughts on Grids</div></h1><nav role="navigation"><form action="https://www.google.com/search"><ul> <li class="nav"><a href="http://www.redblobgames.com/">Home</a></li> <li class="nav"><a href="http://simblob.blogspot.com/">Blog</a></li> <li class="nav omit-if-narrow"><a href="http://pinboard.in/u:amitp/t:gamedev/">Links</a></li> <li class="nav omit-if-narrow"><a href="https://twitter.com/redblobgames">Twitter</a></li> <li class="nav"><a rel="me" href="http://www-cs-students.stanford.edu/%7Eamitp/">About</a></li> <li class="nav omit-if-narrow"> </li><li class="nav omit-if-narrow"><input name="q" placeholder="Search" size="8" type="search"></li></ul><input name="hq" value="site:www.redblobgames.com OR site:theory.stanford.edu/~amitp/ OR site:www-cs-students.stanford.edu/~amitp/ OR site:amitp.blogspot.com OR site:simblob.blogspot.com" type="hidden"></form></nav></header><div class="main" role="main"><address>9 January 2006</address><div class="topic"><p>Grids
+ are commonly used in games for representing playing areas such as maps 
+(in games like Civilization and Warcraft), playing surfaces (in games 
+like pool, table tennis, and poker), playing fields (in games like 
+baseball and football), boards (in games like Chess, Monopoly, and 
+Connect Four), and abstract spaces (in games like Tetris). I’ve 
+attempted to collect my thoughts on grids here on these pages. I avoid 
+implementation details (such as source code) and instead focus on 
+concepts and algorithms. I’ve mostly used grids to represent maps in 
+strategy and simulation games. Although many of the concepts here are 
+useful for all sorts of grids, there is a bias towards the kinds of 
+games I am interested in.</p><p>Grids are built from a repetition of simple shapes. I’ll cover <a href="http://en.wikipedia.org/wiki/Tilings_of_regular_polygons">squares, hexagons, and triangles</a>; vertices, edges, and faces (tiles); coordinate systems; and algorithms for working with grids. The impatient should <strong>skip ahead</strong> to <a href="#coordinates">coordinate systems</a>. I also have a <a href="http://www.redblobgames.com/grids/hexagons/">guide to hexagonal grids</a> with many more hex-specific algorithms.</p><h3>Squares</h3><p class="floating figure" style="width:425px"><img alt="Square Grid" src="Amit%E2%80%99s%20Thoughts%20on%20Grids_files/square-grid.png"><br> Figure 1: Square Grid</p><p>The
+ most common grid is a square grid. It’s simple, easy to work with, and 
+maps nicely onto a computer screen. Square grids are the most common 
+grids used in games, primarily because they are easy to use. Locations 
+can use the familiar cartesian coordinates (x, y) and the axes are 
+orthogonal. The square coordinate system is the same even if your map 
+squares are angled on screen in an isometric or axonometric projection.</p><h3>Hexagons</h3><p class="floating figure" style="width:425px"><img alt="Hexagonal Grid" src="Amit%E2%80%99s%20Thoughts%20on%20Grids_files/hexagon-grid.png"><br> Figure 2: Hexagon Grid</p><p>Hexagons
+ have been used in some board and computer games because they offer less
+ distortion of distances than square grids. This is in part because each
+ hexagon has more non-diagonal neighbors than a square. (Diagonals 
+distort grid distances.) Hexagonals have a pleasing appearance and occur
+ in nature (for example, honeycombs). In this article, I’ll use hexagons
+ that have flat tops and pointy sides, but the math works the same if 
+you want pointy tops and flat sides. I also have a <a href="http://www.redblobgames.com/grids/hexagons/">more comprehsneive guide</a> that covers offset coordinates, axial coordinates, cube coordinates, pointy tops, flat tops, and many more algorithms.</p><h3>Triangles</h3><p class="floating figure" style="width:425px"><img alt="Triangular Grid" src="Amit%E2%80%99s%20Thoughts%20on%20Grids_files/triangle-grid.png"><br> Figure 3: Triangle Grid</p><p>Triangles
+ are common in 3d graphics but are rarely used for game maps. A big 
+disadvantage of triangle maps, aside from unfamiliarity, is the large 
+perimeter and small area (the opposite of a hexagon). The small area 
+means it’s harder to place game pieces completely within a single space 
+on the map. In 3d graphics, triangles are the only shape that is planar;
+ squares and hexagons can be “bent”, sometimes in impossible ways. In 
+this article I’ll use triangles pointed up and down, but the math works 
+the same if your triangles point left and right.</p></div><div class="h2banner"><h2 id="parts"><a class="anchor" href="#parts">#</a>Grid Parts</h2></div><div class="topic"><p class="floating figure" style="width:425px"><img alt="Grid Parts" src="Amit%E2%80%99s%20Thoughts%20on%20Grids_files/grid-parts.png"><br> Figure 4: Grid Parts</p><p>Grids
+ have three types of parts: faces (tiles), edges, and vertices. Each 
+face is a two dimensional surface enclosed by edges. Each edge is a one 
+dimensional line segment ending at two vertices. Each vertex is a zero 
+dimensional point. It is common for games to focus on only one of these 
+types of parts. “Western” games like Chess and Checkers seem to focus on
+ faces and “eastern” games like Go and Chinese Checkers seem to focus on
+ vertices. There are some games like Roulette that assign meaning to all
+ three types of grid parts.</p><p>Faces, edges, and vertices show up in 
+polygonal maps as well. Algorithms that work on faces, edges, and 
+vertices without requiring grid coordinates will work on these polygonal
+ maps:</p><p class="floating figure" style="width:425px"><img alt="Voronoi Grid Parts" src="Amit%E2%80%99s%20Thoughts%20on%20Grids_files/voronoi-grid-parts.png"><br> Figure 4b: Grid Parts with polygons</p><p>Grids
+ and polygonal maps can be converted into graph structures by turning 
+each face into a node and each edge between faces into a graph edge 
+between nodes. The graph structure allows the use of graph algorithms 
+(such as shortest path) on the grid map.</p><h3>Uses in games</h3><p>Computer
+ games can use all three types of grid parts, but faces are the most 
+common. Buildings, land types (grass, desert, gravel, etc.), and 
+territory ownership use faces. Territory borders and “flow” algorithms 
+(which simulate the flow of water, people, goods, etc., between adjacent
+ faces) can use edges. Heights (altitude, water depth) use vertices. 
+Roads and railroads can either use faces (as in SimCity) or edges (as in
+ Locomotion; see <a href="http://theory.stanford.edu/%7Eamitp/game-programming/road-applet/roads.html">my Java applet demonstrating this</a>).</p><h3>Counting the parts</h3><p>We
+ can count how many faces, edges, and vertices are needed to form a 
+grid. The approach is to look at adjacency and sharing. Consider a 
+triangle grid (see Figure 4). Each triangle face has 3 edges. Thus, we 
+expect 3 times as many edges as faces. However, each edge is shared by 2
+ faces, so we have 3 edges for every 2 faces. Each triangle face has 3 
+vertices (corners). Each vertex is shared by 6 faces. Therefore we have 3
+ vertices for every 6 faces, or 1 vertex for every 2 faces. These 
+relationships will be important when designing coordinate systems. 
+Squares have equal numbers of faces and vertices. Hexagons have more 
+vertices than faces. Triangles have more faces than vertices. There are 
+always more edges than faces or vertices.</p><table class="standard centered"><thead><tr><th>Shape</th><th>Faces (F)</th><th>Edges (E)</th><th>Vertices (V)</th></tr></thead><tbody><tr><th>square</th><td>1</td><td>2</td><td>1</td></tr><tr><th>hexagon</th><td>1</td><td>3</td><td>2</td></tr><tr><th>triangle</th><td>2</td><td>3</td><td>1</td></tr></tbody></table><p>I’ll call these the <strong>F,E,V counts.</strong> The F,E,V of squares is <strong>1,2,1</strong>; of hexagons, <strong>1,3,2</strong>; of triangles <strong>2,3,1</strong>.
+ Notice that hexagon and triangle grids have similar counts, except the 
+vertices and faces counts are reversed. That’s because hexagon grids and
+ triangle grids are <dfn>duals</dfn>: if you place a vertex in the 
+center of each face of a triangle grid, you will get a hexagon grid, and
+ vice versa. Square grids are duals of themselves. If you place a vertex
+ in the center of each square, you will produce another square grid, 
+offset from the first. Read more about <a href="http://en.wikipedia.org/wiki/List_of_uniform_planar_tilings">duals on Wikipedia</a>.</p></div><div class="h2banner"><h2 id="derivation"><a class="anchor" href="#derivation">#</a>Derivation of Hexagon and Triangle Grids</h2></div><div class="topic"><p>Hexagon and triangle grids can be derived from square grids. (Try changing the angle in <a href="http://nodename.com/wpEmbeds/VoronoiLattice/DelaunayLattice.swf">this Flash demo</a>.)
+ Since coordinate systems for squares are straightforward, the 
+derivation will guide us in designing coordinate systems for hexagons 
+and triangles.</p><h3>Squares to Hexagons</h3><p>There are two steps 
+needed to turn a square grid into a hexagon grid. First, we must offset 
+the columns (or rows). Second, we split half the square edges and bend 
+them in the middle.</p><p class="figure" style="width:90%"><img alt="Offsetting a square grid to make a hexagonal grid" src="Amit%E2%80%99s%20Thoughts%20on%20Grids_files/square-to-hexagon-1.png"> &nbsp; &nbsp; &nbsp; <img alt="Another way to offset a square grid to make a hexagonal grid" src="Amit%E2%80%99s%20Thoughts%20on%20Grids_files/square-to-hexagon-2.png"><br> Figure 5: Square Grid, approaches to offsets</p><!-- http://bl.ocks.org/2932721 --><p>There
+ are two simple ways to offset columns. The most common is to offset 
+every other column (see the first grid in Figure 5). Code using this 
+approach looks at whether it’s an odd or even column and chooses whether
+ to offset it. A simpler approach is to offset each column by half a 
+height more than the previous column (see the second grid in Figure 5). 
+Code using this approach is more uniform, but the map shape is no longer
+ rectangular, which can be inconvenient. On these pages I will focus on 
+the latter approach; it’s easier to work with and can be also used with 
+triangles. (In a future version of this page I may cover the other form 
+as well.)</p><p class="figure" style="width:90%"><img alt="Widen squares into hexagons, stage 1" src="Amit%E2%80%99s%20Thoughts%20on%20Grids_files/square-to-hexagon-2.png"><img alt="Widen squares into hexagons, stage 2" src="Amit%E2%80%99s%20Thoughts%20on%20Grids_files/square-to-hexagon-3.png"><img alt="Widen squares into hexagons, stage 3" src="Amit%E2%80%99s%20Thoughts%20on%20Grids_files/hexagon-grid.png"><br> Figure 6: Widening squares into hexagons</p><p>With
+ either offset approach, the next step is to split the vertical edges of
+ the squares and bend them, as shown in Figure 6. When the bend is 
+reduced from 180 degrees to 120 degrees, you will have regular hexagons.
+ Note that splitting the vertical edges means we’ve increased the number
+ of edges from 4 to 6 (a net increase of 1 edge per face, since the 2 
+new edges are shared by 2 faces). We’ve also increased the number of 
+vertices from 4 to 6 (but these vertices are shared, so the net increase
+ is 1), and we’ve left the number of faces unchanged. The F,E,V counts 
+go from 1,2,1 to 1,3,2.</p><h3>Squares to Triangles</h3><p class="figure" style="width:90%"><img alt="Square grid" src="Amit%E2%80%99s%20Thoughts%20on%20Grids_files/square-grid-small.png"> &nbsp; &nbsp; <img alt="Rhombus grid, from shearing a square grid" src="Amit%E2%80%99s%20Thoughts%20on%20Grids_files/rhombus-grid-small.png"><img alt="Triangle grid, from subdividing rhombuses" src="Amit%E2%80%99s%20Thoughts%20on%20Grids_files/triangle-grid-small.png"><br> Figure 7: Shearing squares into rhombuses, then subdividing them</p><p>There are two steps needed to turn a square grid into a triangle grid. First, we must <a href="http://en.wikipedia.org/wiki/Shear_mapping">shear</a>
+ the squares. This gives us a rhombus grid (see Figure 7). To make 
+triangles we split each rhombus face into two triangles. Splitting each 
+face means we now have twice as many faces as before, we’ve added 1 edge
+ for each face, and we haven’t added any vertices. The F,E,V counts go 
+from 1,2,1 to 2,3,1.</p></div><div class="h2banner"><h2 id="coordinates"><a class="anchor" href="#coordinates">#</a>Coordinate Systems</h2></div><div class="topic"><p>There
+ are three grid parts, and we need a way to address each of them. I’ll 
+start with simple numeric coordinates that match the grid’s axes. <strong>The F,E,V counts tells us how many grid parts share the same coordinate.</strong> If more than one part has the same coordinate, I’ll use a capital letter to disambiguate.</p><h3>Square Grids</h3><p class="figure" style="width:90%"><img alt="Faces of a square" src="Amit%E2%80%99s%20Thoughts%20on%20Grids_files/square-grid-face-coordinates.png"> &nbsp; &nbsp; <img alt="Edges of a square" src="Amit%E2%80%99s%20Thoughts%20on%20Grids_files/square-grid-edge-coordinates.png">&nbsp; &nbsp; <img alt="Vertices of a square" src="Amit%E2%80%99s%20Thoughts%20on%20Grids_files/square-grid-vertex-coordinates.png"><br> Figure 8: Square grid coordinate systems: faces, edges, vertices</p><p>Square
+ grids are fairly easy. See the first diagram in Figure 8 for the 
+standard coordinate system for faces. The F,E,V counts are 1,2,1. That 
+means only edges will need a letter for disambiguation. For every face 
+we (arbitrarily) assign one vertex to share its coordinate. I’ve chosen 
+the southwest corner of the face. Compare the face diagram to the vertex
+ diagram to see how the coordinates are related. For each face we assign
+ two edges to share its coordinate. I’ve chosen the south and west 
+edges, and annotated the coordinates with the letters <code>S</code> and <code>W</code>.
+ Compare the face diagram with the edge diagram to see how the 
+coordinates are related. There is one face, two edges, and one vertex 
+that share the (1, 1) grid coordinate. This matches our F,E,V counts of 
+1,2,1.</p><h3>Hexagon Grids</h3><p class="figure" style="width:90%"><img alt="Faces of a hexagon" src="Amit%E2%80%99s%20Thoughts%20on%20Grids_files/hexagon-grid-face-coordinates.png"> &nbsp; &nbsp; <img alt="Edges of a hexagon" src="Amit%E2%80%99s%20Thoughts%20on%20Grids_files/hexagon-grid-edge-coordinates.png">&nbsp; &nbsp; <img alt="Vertices of a hexagon" src="Amit%E2%80%99s%20Thoughts%20on%20Grids_files/hexagon-grid-vertex-coordinates.png"><br> Figure 9: Hexagon grid coordinate systems: faces, edges, vertices</p><p>We
+ created the hexagon grid out of a square grid. The coordinates of a 
+hexagon face can be the same as the coordinates of the square face that 
+was transformed into that hexagon. Compares Figure 8 to Figure 9 and you
+ can see how the face coordinates are related. For each face we choose 
+three edges and two vertices to share the same coordinate. I’ve chosen 
+the NW, N, and NE edges, and labeled them W, N, E. I’ve chosen the 
+leftmost and rightmost vertices and labeled them L, R. Many other 
+assignments are possible.</p><h3>Triangle Grids</h3><p id="figure-10" class="figure" style="width:90%"><img alt="Faces of a triangle" src="Amit%E2%80%99s%20Thoughts%20on%20Grids_files/triangle-grid-face-coordinates.png"> &nbsp; &nbsp; <img alt="Edges of a triangle" src="Amit%E2%80%99s%20Thoughts%20on%20Grids_files/triangle-grid-edge-coordinates.png">&nbsp; &nbsp; <img alt="Vertices of a triangle" src="Amit%E2%80%99s%20Thoughts%20on%20Grids_files/triangle-grid-vertex-coordinates.png"><br> Figure 10: Triangle grid coordinate systems: faces, edges, vertices</p><p>We
+ created a triangle grid out of a square grid, and we split each sheared
+ square (rhombus) into two triangles. This means each square face 
+coordinate needs to be two triangle face coordinates. I chose to label 
+them L and R, as seen in Figure 10. The edges are the same as those for 
+squares (W and S), except we have one additional edge from the splitting
+ of the face in two, and I’ve labeled that E. The extra triangle face 
+does not create any additional vertices, so the vertex labeling is the 
+same as the square grid labeling.</p></div><div class="h2banner"><h2 id="relationships"><a class="anchor" href="#relationships">#</a>Relationships between Grid Parts</h2></div><div class="topic"><p>Given
+ each of the 3 grid parts, we can define relationships with 3 grid 
+parts, giving us 9 relationships. There are more relationships you can 
+define, but I’ll focus on these 9. I don’t know the standard names for 
+these relationships, so I’ve made up some names.</p><table class="standard centered"><thead><tr><th rowspan="2">Part A (black)</th><th colspan="3">Part B (red)</th></tr><tr><th>Face</th><th>Edge</th><th>Vertex</th></tr></thead><tbody><tr><th>Face</th><td>Neighbors:<br><img alt="Neighbors of a square" src="Amit%E2%80%99s%20Thoughts%20on%20Grids_files/square-rel-face-face.png"></td><td>Borders:<br><img alt="Borders of a square" src="Amit%E2%80%99s%20Thoughts%20on%20Grids_files/square-rel-face-edge.png"></td><td>Corners:<br><img alt="Corners of a square" src="Amit%E2%80%99s%20Thoughts%20on%20Grids_files/square-rel-face-vertex.png"></td></tr><tr><th>Edge</th><td>Joins:<br><img alt="Joins of an edge" src="Amit%E2%80%99s%20Thoughts%20on%20Grids_files/square-rel-edge-face.png"></td><td>Continues:<br><img alt="Continuation of an edge" src="Amit%E2%80%99s%20Thoughts%20on%20Grids_files/square-rel-edge-edge.png"></td><td>Endpoints:<br><img alt="Endpoints of an edge" src="Amit%E2%80%99s%20Thoughts%20on%20Grids_files/square-rel-edge-vertex.png"></td></tr><tr><th>Vertex</th><td>Touches:<br><img alt="Vertex touching" src="Amit%E2%80%99s%20Thoughts%20on%20Grids_files/square-rel-vertex-face.png"></td><td>Protrudes:<br><img alt="Vertex protrusion" src="Amit%E2%80%99s%20Thoughts%20on%20Grids_files/square-rel-vertex-edge.png"></td><td>Adjacent:<br><img alt="Adjacent vertices" src="Amit%E2%80%99s%20Thoughts%20on%20Grids_files/square-rel-vertex-vertex.png"></td></tr></tbody></table><p>In your game you may want to use variants of the above. For example, the <strong>neighbors</strong> and <strong>adjacent</strong> relationships could have included diagonals. The <strong>continues</strong> relationship could have included edges that weren’t colinear with the original edge. I chose the simplest relationships.</p><h3>Algorithms</h3><p>Each of these 9 relationships can be expressed in as algorithms from A to a list of Bs; I write them as <strong>A → B1 B2 B3…</strong>
+ . There are 3 shapes, so that gives us 27 potential algorithms, 
+expressed here in a simple form that you can translate into your 
+favorite programming language. For some shapes and algorithms, there is 
+more than one variant of <strong>A</strong>, so I will list the rules for each variant. For example, triangle faces come in <strong>L</strong> and <strong>R</strong> variants. Here are all the algorithms:</p><table class="standard"><thead><tr><th rowspan="2">Relationship</th><th colspan="3">Shape</th></tr><tr><th>Square</th><th>Hexagon</th><th>Triangle</th></tr></thead><tbody><tr><th>Neighbors:<br><img src="Amit%E2%80%99s%20Thoughts%20on%20Grids_files/square-rel-face-face.png"></th><td>(u,v) → (u,v+1) (u+1,v) (u,v-1), (u-1,v)</td><td>(u,v) → (u,v+1) (u+1,v) (u+1,v-1) (u,v-1) (u-1,v) (u-1,v+1)</td><td>(u,v,L) → (u,v,R) (u,v-1,R) (u-1,v,R) <br><br> (u,v,R) → (u,v+1,L) (u+1,v,L) (u,v,L)</td></tr><tr><th>Borders:<br><img alt="" src="Amit%E2%80%99s%20Thoughts%20on%20Grids_files/square-rel-face-edge.png"></th><td>(u,v) → (u,v+1,S) (u+1,v,W) (u,v,S) (u,v,W)</td><td>(u,v) → (u,v,N) (u,v,E) (u+1,v-1,W) (u,v-1,N) (u-1,v,E) (u,v,W)</td><td>(u,v,L) → (u,v,E) (u,v,S) (u,v,W) <br><br> (u,v,R) → (u,v+1,S) (u+1,v,W) (u,v,E)</td></tr><tr><th>Corners:<br><img alt="" src="Amit%E2%80%99s%20Thoughts%20on%20Grids_files/square-rel-face-vertex.png"></th><td>(u,v) → (u+1,v+1) (u+1,v) (u,v) (u,v+1)</td><td>(u,v) → (u+1,v,L) (u,v,R) (u+1,v-1,L) (u-1,v,R) (u,v,L) (u-1,v+1,R)</td><td>(u,v,L) → (u,v+1) (u+1,v) (u,v) <br><br> (u,v,R) → (u+1,v+1) (u+1,v) (u,v+1)</td></tr><tr><th>Joins:<br><img alt="" src="Amit%E2%80%99s%20Thoughts%20on%20Grids_files/square-rel-edge-face.png"></th><td>(u,v,W) → (u,v) (u-1,v) <br><br> (u,v,S) → (u,v) (u,v-1)</td><td>(u,v,N) → (u,v+1) (u,v) <br><br> (u,v,E) → (u+1,v) (u,v) <br><br> (u,v,W) → (u,v) (u-1,v+1)</td><td>(u,v,S) → (u,v,L) (u,v-1,R) <br><br> (u,v,E) → (u,v,R) (u,v,L) <br><br> (u,v,W) → (u,v,L) (u-1,v,R)</td></tr><tr><th>Continues:<br><img alt="" src="Amit%E2%80%99s%20Thoughts%20on%20Grids_files/square-rel-edge-edge.png"></th><td>(u,v,W) → (u,v+1,W) (u,v-1,W) <br><br> (u,v,S) → (u+1,v,S) (u-1,v,S)</td><td>No edges continue straight in a hexagonal grid</td><td>(u,v,W) → (u,v+1,W) (u,v-1,W) <br><br> (u,v,E) → (u+1,v-1,E) (u-1,v+1,E) <br><br> (u,v,S) → (u+1,v,S) (u-1,v,S)</td></tr><tr><th>Endpoints:<br><img alt="" src="Amit%E2%80%99s%20Thoughts%20on%20Grids_files/square-rel-edge-vertex.png"></th><td>(u,v,W) → (u,v+1) (u,v) <br><br> (u,v,S) → (u+1,v) (u,v)</td><td>(u,v,N) → (u+1,v,L) (u-1,v+1,R) <br><br> (u,v,E) → (u,v,R) (u+1,v,L) <br><br> (u,v,W) → (u-1,v+1,R) (u,v,L)</td><td>(u,v,W) → (u,v+1) (u,v) <br><br> (u,v,E) → (u+1,v) (u,v+1) <br><br> (u,v,S) → (u+1,v) (u,v)</td></tr><tr><th>Touches:<br><img alt="" src="Amit%E2%80%99s%20Thoughts%20on%20Grids_files/square-rel-vertex-face.png"></th><td>(u,v) → (u,v) (u,v-1) (u-1,v-1) (u-1,v)</td><td>(u,v,L) → (u,v) (u-1,v) (u-1,v+1) <br><br> (u,v,R) → (u+1,v) (u+1,v-1) (u,v)</td><td>(u,v) → (u-1,v,R) (u,v,L) (u,v-1,R) (u,v-1,L) (u-1,v-1,R) (u-1,v,L)</td></tr><tr><th>Protrudes:<br><img alt="" src="Amit%E2%80%99s%20Thoughts%20on%20Grids_files/square-rel-vertex-edge.png"></th><td>(u,v) → (u,v,W) (u,v,S) (u,v-1,W) (u-1,v,S)</td><td>(u,v,L) → (u,v,W) (u-1,v,E) (u-1,v,N) <br><br> (u,v,R) → (u+1,v-1,N) (u+1,v-1,W) (u,v,E)</td><td>(u,v) → (u,v,W) (u,v,S) (u,v-1,E) (u,v-1,W) (u-1,v,S) (u-1,v,E)</td></tr><tr><th>Adjacent:<br><img alt="" src="Amit%E2%80%99s%20Thoughts%20on%20Grids_files/square-rel-vertex-vertex.png"></th><td>(u,v) → (u,v+1) (u+1,v) (u,v-1) (u-1,v)</td><td>(u,v,L) → (u-1,v+1,R) (u-1,v,R) (u-2,v+1,R) <br><br> (u,v,R) → (u+2,v-1,L) (u+1,v-1,L) (u+1,v,L)</td><td>(u,v) → (u,v+1) (u+1,v) (u+1,v-1) (u,v-1) (u-1,v) (u-1,v+1)</td></tr></tbody></table><h3>Relations</h3><p>(Feel free to skip this section.) The relationships listed above are themselves related to each other. For example, <strong>borders</strong> goes from faces to edges, and it’s the inverse of <strong>joins</strong>, which goes from edges to faces. If some edge <strong>B</strong> is in the <strong>borders</strong> list of some face <strong>A</strong>, then <strong>A</strong> will be in the <strong>joins</strong> list of edge <strong>B</strong>. These 9 relationships can be distilled down into 6 mathematical <em>relations</em>.</p><p>If
+ you had a database, you could express the relations directly. For 
+example, here’s the relation between faces and edges in a small 1x2 
+square grid:</p><table class="standard" style="margin-left:3em"><thead><tr><th>Face</th><th>Edge</th></tr></thead><tbody><tr><td>0,0</td><td>0,0,S</td></tr><tr><td>0,0</td><td>0,0,W</td></tr><tr><td>0,0</td><td>0,1,S</td></tr><tr><td>0,0</td><td>1,0,W</td></tr><tr><td>1,0</td><td>1,0,S</td></tr><tr><td>1,0</td><td>1,0,W</td></tr><tr><td>1,0</td><td>1,1,S</td></tr><tr><td>1,0</td><td>2,0,W</td></tr></tbody></table><p>Given a relation, you can look things up in any column. For example, with the above table, looking up <code>Face==(0,0)</code> results in 4 edges, which is what the <strong>borders</strong> relationship expresses. Looking up <code>Edge==(1,0,W)</code> results in 2 faces, which is what the <strong>joins</strong>
+ relationship expresses. A relation is more general, and allows you to 
+look things up in many ways; each relationship (and algorithm) is an 
+expression of one particular way of looking things up.</p><p>Given 6 
+relations, there should then be 12 relationships. Why do we have only 9?
+ It’s because the Face/Face, Edge/Edge, and Vertex/Vertex relations are <em>symmetric</em>,
+ so looking things up the other way produces the same answer. Thus, 3 of
+ the 12 relationships are redundant, and we are left with 9.</p><h3>Implementation</h3><p>All
+ the algorithms are straightforward. How might you implement them? 
+You’ll first want to choose data structures for each of the three 
+coordinate systems. I recommend keeping it very simple and transparent. 
+All the coordinate systems I listed have an integer <code>u</code> and an integer <code>v</code>, and some of them have an annotation like <code>L</code> or <code>W</code>.
+ For the structure, in Ruby use a class with public attrs; in Lisp use a
+ list; in C use a struct; in Java use a class with public fields; in 
+Python use a simple object or dict. For the annotations, in Ruby or 
+Lisp, use symbols (<code>'L</code> or <code>:L</code>); in C, use characters (<code>'L'</code>) or an enum type (<code>L</code>); in Java, use characters; in Python, use one-character strings.</p><p>The next step is to implement the algorithms you need. The simplest thing to do is to write functions (or methods) that take <strong>A</strong> and return a list of <strong>B</strong>. If there are multiple variants of <strong>A</strong>,
+ use a switch/case statement to branch on the annotation. This is the 
+simplest approach, but it is not the fastest. To make things faster, 
+your caller might pre-allocate the list, or you might provide a callback
+ that is inlined (for example, STL function objects in C++). In some 
+situations you’ll want to look up many <strong>A</strong>s at once, so you might provide an algorithm that works on lists of <strong>A</strong> and produces lists of lists of <strong>B</strong>.</p><p>I
+ generally avoid giving implementations, because they are too specific 
+to each game, but I’ll give an example of the Triangle shape in Ruby. I 
+chose to use a list as my basic data structure, and I use Ruby symbols 
+(like <code>:L</code>) for annotations.</p><table class="standard"><thead><tr><th>Algorithm</th><th>Ruby Code</th></tr></thead><tbody><tr><td>(<span style="background-color:#edf">u,v</span>,<span style="background-color:#fac">L</span>) → <br> &nbsp; &nbsp; <span style="background-color:#ffd">(u,v+1) (u+1,v) (u,v)</span><br><br> (<span style="background-color:#edf">u,v</span>,<span style="background-color:#cfa">R</span>) → <br> &nbsp; &nbsp; <span style="background-color:#dff">(u+1,v+1) (u+1,v) (u,v+1)</span></td><td><pre>  def corners(face)
+    <span style="background-color:#edf">u, v</span>, side = face
+    case side
+    when :<span style="background-color:#fac">L</span>
+      [<span style="background-color:#ffd">[u, v+1], [u+1, v], [u, v]</span>]
+    when :<span style="background-color:#cfa">R</span>
+      [<span style="background-color:#dff">[u+1, v+1], [u+1, v], [u, v+1]</span>]
+    end
+  end</pre></td></tr></tbody></table><p>It’s that simple. Each variant becomes a case in the <code>case</code> statement.</p></div><div class="h2banner"><h2 id="transformations"><a class="anchor" href="#transformations">#</a>Coordinate Transformations</h2></div><div class="topic"><p>In
+ both 2D and 3D graphics systems, we have to transform “world” 
+coordinates into “screen” coordinates and back. With grids, we also have
+ to transform “grid” coordinates into “world” coordinates and back. 
+Transformations <em>occur on points</em>. From grid to world 
+coordinates, we transform vertices and occasionally face centers. From 
+world to grid coordinates, we can choose whether to find the face 
+enclosing a point, the edge closest to a point, or the vertex closest to
+ a point.</p><h3>Squares</h3><p>Squares are easy to work with. If one side of the square has length <code>s</code> and the square edges are aligned with the x and y axes, you can multiply your grid vertex coordinates by <code>s</code> to get the world coordinates.</p><p>Going the other way, we want to determine which vertex is closest to a point in world space. Divide the world coordinates by <code>s</code>
+ and round the float to an int to get the closest vertex. If instead you
+ want to determine which face encloses a point in world space, use floor
+ instead of round.</p><h3>Hexagons</h3><p class="floating figure" style="width:400px"><img src="Amit%E2%80%99s%20Thoughts%20on%20Grids_files/hex-grid-metrics-labeled.png"><br> Figure 11: Hexagon metrics</p><p>Hexagons are only slightly trickier to work with than squares. Computing face centers is simple. In Figure 11, there’s an <code>i</code> vector and a <code>j</code> vector. Going from hexagonal coordinates to world coordinates is a (very simple) matrix multiply:</p><pre style="line-height:1.0">⎛ x ⎞     ⎡ i.x j.x ⎤ ⎛ u ⎞
+⎝ y ⎠  =  ⎣ i.y j.y ⎦ ⎝ v ⎠</pre><p>Expanded out, that’s:</p><pre>x = i.x * u + j.x * v
+y = i.y * u + j.y * v</pre><p>Figure 11 shows that for flat-topped hexagons, <code>i</code> is <code>(hexagon_narrow_width, 0.5*hexagon_height)</code> and <code>j</code> is <code>(0, hexagon_height)</code>, so that give us our values for <code>i.x, i.y, j.x, j.y</code>. (Pointy-topped hexagons will be silghty different.) The resulting code is:</p><pre># Face center
+x = hexagon_narrow_width * u
+y = hexagon_height * (u*0.5 + v)</pre><p>Computing vertices is also 
+fairly simple. In the rest of the article I’ve labeled hexagon vertices 
+either L or R. These two vertices occur half a hexagon width left or 
+right of the center of the hexagon face (see Figure 9), so all we have 
+to do is add or subtract <code>hexagon_wide_width * 0.5</code>:</p><pre># If x,y are the face center, we can adjust to find a vertex
+case side
+  when :L
+    x -= hexagon_wide_width * 0.5
+  when :R
+    x += hexagon_wide_width * 0.5
+end</pre><p>When working with hexagons, treat face centers as primary, and vertices as secondary.</p><p>Going from hexagonal coordinates <code>(u, v)</code> to world coordinates <code>(x, y)</code> was a matrix multiply. To go from world coordinates back to hexagons, you can solve the equations for <code>(u, v)</code>. I’ll skip the algebra; here’s the result for flat-topped hexagons:</p><pre>u = x / hexagon_narrow_width
+v = y / hexagon_height - u * 0.5</pre><p>That works if you start with <code>(x, y)</code> at a face center. If you have arbitary <code>(x, y)</code> it’s a little more work. The simplest (but not most efficient) way is to consider the computed <code>(u, v)</code>
+ plus all neighbors and determine which one is closest to the given 
+world coordinate. This approach works for all three grid types. If you 
+are using this for mouse selection, this is plenty fast enough. It can 
+be optimized further by looking more closely at the polygons.</p><h3>Triangles</h3><p>Triangles
+ are sheared and split squares. Triangle vertices only use the shearing 
+step, which creates rhombuses. To convert triangle <em>vertices</em> from grid coordinates to world coordinates, multiply by the axis vectors <code>i</code> and <code>j</code>:</p><pre style="line-height:1.0">⎛ x ⎞     ⎡ i.x j.x ⎤ ⎛ u ⎞
+⎝ y ⎠  =  ⎣ i.y j.y ⎦ ⎝ v ⎠</pre><p>Expanded out, that’s</p><pre>x = i.x * u + j.x * v
+y = i.y * u + j.y * v</pre><p>To convert triangle <em>face</em> coordinates to world coordinates involves an adjustment. For face <code>(u, v, L/R)</code> first calculate the world coordinates of the lower left vertex, <code>(u, v)</code>. Then for an <code>L</code> face, add <code>(1/2 * i, 1/3 * j)</code> to the lower left vertex location. For an <code>R</code> face, add <code>(i, 2/3 * j)</code> to the lower left vertex location. The result will be the center of the face.</p><p>To convert from world coordinates to triangle vertices, first find the lower left corner of the rhombus <code>(u, v)</code>
+ using algebra, or by inverting the i.x,j.x,i.y,j.y matrix. The rhombus 
+contains two triangle faces. To determine which face the point is in, 
+look at the edge that divides the two triangles inside each rhombus 
+(edge “E” in <a href="#figure-10">Figure 10</a>). If <code>frac(u) + frac(v) &lt; 1.0</code>, the point is on the left of the line, and is therefore in the <code>L</code> face; otherwise it is in the <code>R</code> face.</p><p>When
+ working with triangles, treat vertices as primary, and face centers as 
+secondary. This is the opposite of how we treat hexagons.</p></div><div class="h2banner"><h2 id="more"><a class="anchor" href="#more">#</a>More</h2></div><div class="topic"><p>Distance
+ formulas on a square grid are well known (manhattan, euclidean, 
+diagonal distance). Distance on a hex grid using this coordinate system 
+uses an extension of the two-axis coordinates into a third axis, and I 
+have the formula on <a href="http://www.redblobgames.com/grids/hexagons/#distances">my hex grid page</a>. Distance on a triangle grid is something I explore <a href="http://simblob.blogspot.com/2007/06/distances-on-triangular-grid.html">here</a>.</p><p>What else would you like to see me include in this document? Was anything confusing? Incomplete? Incorrect? <a href="mailto:redblobgames@gmail.com">Let me know</a>.</p><p>The diagrams on this page were produced by implementing some of the grid coordinate algorithms in <a href="http://www.ruby-lang.org/en/">Ruby</a>, then generating <a href="http://en.wikipedia.org/wiki/Svg">SVG</a>, then converting SVG to <a href="http://en.wikipedia.org/wiki/Png">PNG</a> using <a href="http://www.inkscape.org/">Inkscape</a>. For a few diagrams, I manually added annotations from within Inkscape. My Ruby code is <a href="http://www-cs-students.stanford.edu/%7Eamitp/game-programming/grids/draw_grid.rb">here</a>. You can get any of the SVG diagrams by changing <code>.png</code> in the URL to <code>.svg</code>. If you’d like to use my diagrams, please email me.</p><p>There are some things I didn’t find a place for, but might be of interest. Mathematicians have found <a href="http://en.wikipedia.org/wiki/Lattice_%28group%29#Lattices_in_two_dimensions:_detailed_discussion">five types of grids in 2D space</a>: squares, triangles, <a href="http://en.wikipedia.org/wiki/Hexagonal_lattice">hexagons</a>, rectangles, and parallelograms. However only squares, triangles, and hexagons are regular polygons. <a href="http://masters.donntu.edu.ua/2009/fvti/hodus/library/article4/article4.html">Spiral Honeycomb Mosaic</a> is an interesting way to assign numbers to hexagons in a hexagonal grid. It results in bizarre properties.</p></div></div><div class="divider"></div><div class="divider-disqus" style="font-size:large">
+            Email me at
+            
+            <a class="email" href="mailto:redblobgames@gmail.com">redblobgames@gmail.com</a>,
+                or tweet to <a href="https://twitter.com/redblobgames">@redblobgames</a>,
+              
+            or post a public comment:
+          </div><div class="comments" role="complementary"><div id="disqus_thread" class="main"><iframe id="dsq-app1" name="dsq-app1" allowtransparency="true" scrolling="no" tabindex="0" title="Disqus" style="width: 1px !important; min-width: 100% !important; border: medium none !important; overflow: hidden !important; height: 7206px !important;" src="Amit%E2%80%99s%20Thoughts%20on%20Grids_files/a.html" horizontalscrolling="no" verticalscrolling="no" width="100%" frameborder="0"></iframe><iframe id="indicator-north" name="indicator-north" allowtransparency="true" scrolling="no" tabindex="0" title="Disqus" style="width: 995px !important; border: medium none !important; overflow: hidden !important; top: 0px !important; min-width: 995px !important; max-width: 995px !important; position: fixed !important; z-index: 2147483646 !important; height: 19px !important; min-height: 19px !important; max-height: 19px !important; display: none !important;" frameborder="0"></iframe><iframe id="indicator-south" name="indicator-south" allowtransparency="true" scrolling="no" tabindex="0" title="Disqus" style="width: 995px !important; border: medium none !important; overflow: hidden !important; bottom: 0px !important; min-width: 995px !important; max-width: 995px !important; position: fixed !important; z-index: 2147483646 !important; height: 19px !important; min-height: 19px !important; max-height: 19px !important; display: none !important;" frameborder="0"></iframe></div><script>
+              (function() {
+              var dsq = document.createElement('script');
+              dsq.type = 'text/javascript'; dsq.async = true;
+              
+                  dsq.src = '//blobs.disqus.com/embed.js';
+                
+              if (document.location.hostname != 'localhost') (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+              })();
+            </script><noscript><a href="//blobs.disqus.com/?url=ref">View the discussion thread.</a></noscript></div><div class="footer" role="contentinfo"><div style="float:left;width:300px;margin-right:40px"><address>
+		  Copyright © 2017
+                  <span class="vcard"><a rel="author home copyright" class="url fn n" href="http://www-cs-students.stanford.edu/%7Eamitp/"><span class="given-name"> Amit </span><span class="family-name"> Patel</span></a></span></address></div><div style="text-align:right">
+	    &nbsp;<!-- Created: Mon Jan  9 17:43:44 PST 2006 --><!-- hhmts start -->Last modified: 18 Jul 2016<!-- hhmts end --></div><br style="clear:both"><!-- Start of counters --><script><!--
+                  var sc_project=417499;
+                  var sc_invisible=1;
+                  var sc_security="";
+(function() {
+      var script = document.createElement('script');
+      script.type = 'text/javascript'; script.async = true;
+      script.src = 'http://statcounter.com/counter/counter_xhtml.js';
+      if (document.location.hostname != 'localhost') document.getElementsByTagName('body')[0].appendChild(script);
+  })();
+                //--></script><noscript><div class="statcounter"><a class="statcounter" href="http://statcounter.com/"><img class="statcounter" src="http://c.statcounter.com/417499/0//1/" alt=""></a></div></noscript><script>
+var _gap = _gap || [];
+_gap.push(['_setAccount', 'UA-79181-1']);
+_gap.push(['_setDomainName', 'stanford.edu']);
+_gap.push(['_setCookiePath', '/~amitp']);
+_gap.push(['_setAllowLinker', true]);
+_gap.push(['_trackPageview']);
+_gap.push(['_gapTrackBounceViaTime', 30]);
+_gap.push(['_gapTrackBounceViaScroll', 25]);
+_gap.push(['_gapTrackReads', 60, 10]);
+_gap.push(['_gapTrackLinkClicks']);
+if (document.location.hostname != 'localhost') (function() {
+    var gap = document.createElement('script');
+    gap.async = true;
+    gap.type = 'text/javascript';
+    gap.src = '/~amitp/gap.min.js';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gap, s);
+})();
+              </script><!-- End of counters --></div><script type="text/javascript" async="" src="Amit%E2%80%99s%20Thoughts%20on%20Grids_files/counter_xhtml.js"></script>
+<iframe style="display: none;"></iframe></body></html>
