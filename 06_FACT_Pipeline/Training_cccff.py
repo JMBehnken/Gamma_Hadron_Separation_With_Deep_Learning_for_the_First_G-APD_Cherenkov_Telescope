@@ -13,7 +13,7 @@ import os
 mc_data_path = '/fhgfs/users/jbehnken/01_Data/01_MC_Data' # Path to preprocessed data
 num_files = 500 # Number of files to load - 1 file = 1000 events
 events_in_validation = 10000
-number_of_nets = 50
+number_of_nets = 15
 
 save_model_path = '/fhgfs/users/jbehnken/01_Data/04_Models'
 model_name = 'cccff'
@@ -95,7 +95,7 @@ for num_steps, learning_rate, batch_size, patch_size, depth, num_hidden in hyper
         hparams = 'bs={}_ps={}_d={}_nh={}_ns={}'.format(batch_size, patch_size, depth, num_hidden, num_steps)
     
         # Build the graph
-        gpu_config = tf.GPUOptions(allow_growth=True, per_process_gpu_memory_fraction=0.4)
+        gpu_config = tf.GPUOptions(allow_growth=True, per_process_gpu_memory_fraction=0.2)
         session_conf = tf.ConfigProto(gpu_options=gpu_config, intra_op_parallelism_threads=18, inter_op_parallelism_threads=18)
         tf.reset_default_graph()
         sess = tf.Session(config=session_conf)

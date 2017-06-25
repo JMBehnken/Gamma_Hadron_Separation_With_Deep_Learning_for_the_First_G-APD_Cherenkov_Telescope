@@ -17,7 +17,7 @@ number_of_nets = 50
 
 save_model_path = '/fhgfs/users/jbehnken/01_Data/04_Models'
 model_name = 'cccf'
-title_name = 'Random_Plotting'
+title_name = 'Optimizing_Run_1'
 
 file_paths = os.listdir(save_model_path)
 for path in file_paths:
@@ -71,12 +71,12 @@ del p, pic, lab
 num_labels = 2 # gamma or proton
 num_channels = 1 # it is a greyscale image
 
-num_steps = [50001] * number_of_nets
+num_steps = [100001] * number_of_nets
 learning_rate = [0.001] * number_of_nets # 0.001
-batch_size = np.random.randint(64, 257, size=number_of_nets) # 64 - 257
+batch_size = np.random.randint(200, 257, size=number_of_nets) # 200 - 257
 patch_size = np.random.randint(0, 2, size=number_of_nets)*2+3 # 3 / 5
-depth = np.random.randint(8, 33, size=number_of_nets) # 8 - 33
-num_hidden = np.random.randint(8, 257, size=number_of_nets) # 8 - 257
+depth = np.random.randint(2, 13, size=number_of_nets) # 2 - 13
+num_hidden = np.random.randint(8, 201, size=number_of_nets) # 8 - 201
 
 hyperparameter = zip(num_steps, learning_rate, batch_size, patch_size, depth, num_hidden)
 
@@ -95,7 +95,7 @@ for num_steps, learning_rate, batch_size, patch_size, depth, num_hidden in hyper
         hparams = 'bs={}_ps={}_d={}_nh={}_ns={}'.format(batch_size, patch_size, depth, num_hidden, num_steps)
     
         # Build the graph
-        gpu_config = tf.GPUOptions(allow_growth=True, per_process_gpu_memory_fraction=0.2)
+        gpu_config = tf.GPUOptions(allow_growth=True, per_process_gpu_memory_fraction=0.4)
         session_conf = tf.ConfigProto(gpu_options=gpu_config, intra_op_parallelism_threads=18, inter_op_parallelism_threads=18)
         tf.reset_default_graph()
         sess = tf.Session(config=session_conf)
@@ -230,6 +230,10 @@ for num_steps, learning_rate, batch_size, patch_size, depth, num_hidden in hyper
                 if step == 0:
                     stopping_auc = 0.0
                     sink_count = 0
+                    
+                    if val<0.3:
+                        break
+                        
                 else:
                     if auc_now > stopping_auc:
                         stopping_auc = auc_now

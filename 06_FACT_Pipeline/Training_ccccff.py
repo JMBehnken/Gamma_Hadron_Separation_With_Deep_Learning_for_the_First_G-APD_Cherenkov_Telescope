@@ -13,10 +13,10 @@ import os
 mc_data_path = '/fhgfs/users/jbehnken/01_Data/01_MC_Data' # Path to preprocessed data
 num_files = 500 # Number of files to load - 1 file = 1000 events
 events_in_validation = 10000
-number_of_nets = 10
+number_of_nets = 1
 
 save_model_path = '/fhgfs/users/jbehnken/01_Data/04_Models'
-model_name = 'ccf'
+model_name = 'ccccff'
 title_name = 'Random_Plotting'
 
 file_paths = os.listdir(save_model_path)
@@ -71,12 +71,12 @@ del p, pic, lab
 num_labels = 2 # gamma or proton
 num_channels = 1 # it is a greyscale image
 
-num_steps = [50001] * number_of_nets # 50001
+num_steps = [50001] * number_of_nets
 learning_rate = [0.001] * number_of_nets # 0.001
 batch_size = np.random.randint(64, 257, size=number_of_nets) # 64 - 257
 patch_size = np.random.randint(0, 2, size=number_of_nets)*2+3 # 3 / 5
 depth = np.random.randint(8, 33, size=number_of_nets) # 8 - 33
-num_hidden = [0] * number_of_nets # 0
+num_hidden = np.random.randint(8, 257, size=number_of_nets) # 8 - 257
 
 hyperparameter = zip(num_steps, learning_rate, batch_size, patch_size, depth, num_hidden)
 
@@ -95,7 +95,7 @@ for num_steps, learning_rate, batch_size, patch_size, depth, num_hidden in hyper
         hparams = 'bs={}_ps={}_d={}_nh={}_ns={}'.format(batch_size, patch_size, depth, num_hidden, num_steps)
     
         # Build the graph
-        gpu_config = tf.GPUOptions(allow_growth=True, per_process_gpu_memory_fraction=0.3)
+        gpu_config = tf.GPUOptions(allow_growth=True, per_process_gpu_memory_fraction=0.4)
         session_conf = tf.ConfigProto(gpu_options=gpu_config, intra_op_parallelism_threads=18, inter_op_parallelism_threads=18)
         tf.reset_default_graph()
         sess = tf.Session(config=session_conf)
@@ -135,21 +135,57 @@ for num_steps, learning_rate, batch_size, patch_size, depth, num_hidden in hyper
             #tf.summary.histogram("biases", layer2_biases)
             #tf.summary.histogram("activations", hidden)
     
+        # Third layer is a convolution layer
+        with tf.name_scope('conv2d_3'):
+            layer3_weights = tf.Variable(tf.truncated_normal([patch_size, patch_size, 2*depth, 4*depth], stddev=0.1), name='W')
+            layer3_biases = tf.Variable(tf.constant(1.0, shape=[4*depth]), name='B')
+    
+            conv = tf.nn.conv2d(pool, layer3_weights, [1, 1, 1, 1], padding='SAME') 
+            hidden = tf.nn.relu(conv + layer3_biases)
+            pool = tf.nn.max_pool(hidden, ksize=[1, 2, 2, 1], strides=[1, 2, 2, 1], padding='SAME')
+    
+            #tf.summary.histogram("weights", layer3_weights)
+            #tf.summary.histogram("biases", layer3_biases)
+            #tf.summary.histogram("activations", hidden)
+            
+        # Fourth layer is a convolution layer
+        with tf.name_scope('conv2d_4'):
+            layer4_weights = tf.Variable(tf.truncated_normal([patch_size, patch_size, 4*depth, 8*depth], stddev=0.1), name='W')
+            layer4_biases = tf.Variable(tf.constant(1.0, shape=[8*depth]), name='B')
+    
+            conv = tf.nn.conv2d(pool, layer4_weights, [1, 1, 1, 1], padding='SAME') 
+            hidden = tf.nn.relu(conv + layer4_biases)
+            pool = tf.nn.max_pool(hidden, ksize=[1, 2, 2, 1], strides=[1, 2, 2, 1], padding='SAME')
+    
+            #tf.summary.histogram("weights", layer4_weights)
+            #tf.summary.histogram("biases", layer4_biases)
+            #tf.summary.histogram("activations", hidden)
     
         # The reshape produces an input vector for the dense layer
         with tf.name_scope('reshape'):
             shape = pool.get_shape().as_list()
             reshape = tf.reshape(pool, [shape[0], shape[1] * shape[2] * shape[3]])
-        
-        # Third layer is a dense output layer
+    
+        # Fifth layer is a dense layer
         with tf.name_scope('fc_1'):
-            layer3_weights = tf.Variable(tf.truncated_normal([12*12*2*depth, num_labels], stddev=0.1), name='W')
-            layer3_biases = tf.Variable(tf.constant(1.0, shape=[num_labels]), name='B')
+            layer5_weights = tf.Variable(tf.truncated_normal([3*3*8*depth, num_hidden], stddev=0.1), name='W')
+            layer5_biases = tf.Variable(tf.constant(1.0, shape=[num_hidden]), name='B')
     
-            output = tf.matmul(reshape, layer3_weights) + layer3_biases
+            hidden = tf.nn.relu(tf.matmul(reshape, layer5_weights) + layer5_biases)
     
-            #tf.summary.histogram("weights", layer3_weights)
-            #tf.summary.histogram("biases", layer3_biases)
+            #tf.summary.histogram("weights", layer5_weights)
+            #tf.summary.histogram("biases", layer5_biases)
+            #tf.summary.histogram("activations", hidden)
+    
+        # Sixth layer is a dense output layer
+        with tf.name_scope('fc_2'):
+            layer6_weights = tf.Variable(tf.truncated_normal([num_hidden, num_labels], stddev=0.1), name='W')
+            layer6_biases = tf.Variable(tf.constant(1.0, shape=[num_labels]), name='B')
+    
+            output = tf.matmul(hidden, layer6_weights) + layer6_biases
+    
+            #tf.summary.histogram("weights", layer6_weights)
+            #tf.summary.histogram("biases", layer6_biases)
             #tf.summary.histogram("activations", output)
     
         # Computing the loss of the model
@@ -173,9 +209,12 @@ for num_steps, learning_rate, batch_size, patch_size, depth, num_hidden in hyper
         with tf.name_scope('validation'):
             pool_1 = tf.nn.max_pool(tf.nn.relu(tf.nn.conv2d(tf_valid_dataset, layer1_weights, [1, 1, 1, 1], padding='SAME') + layer1_biases), ksize=[1, 2, 2, 1], strides=[1, 2, 2, 1], padding='SAME')
             pool_2 = tf.nn.max_pool(tf.nn.relu(tf.nn.conv2d(pool_1, layer2_weights, [1, 1, 1, 1], padding='SAME')  + layer2_biases), ksize=[1, 2, 2, 1], strides=[1, 2, 2, 1], padding='SAME')
-            shape = pool_2.get_shape().as_list()
-            reshape = tf.reshape(pool_2, [shape[0], shape[1] * shape[2] * shape[3]])
-            valid_prediction = tf.nn.softmax(tf.matmul(reshape, layer3_weights) + layer3_biases)
+            pool_3 = tf.nn.max_pool(tf.nn.relu(tf.nn.conv2d(pool_2, layer3_weights, [1, 1, 1, 1], padding='SAME')  + layer3_biases), ksize=[1, 2, 2, 1], strides=[1, 2, 2, 1], padding='SAME')
+            pool_4 = tf.nn.max_pool(tf.nn.relu(tf.nn.conv2d(pool_3, layer4_weights, [1, 1, 1, 1], padding='SAME')  + layer4_biases), ksize=[1, 2, 2, 1], strides=[1, 2, 2, 1], padding='SAME')
+            shape = pool_4.get_shape().as_list()
+            reshape = tf.reshape(pool_4, [shape[0], shape[1] * shape[2] * shape[3]])
+            hidden = tf.nn.relu(tf.matmul(reshape, layer5_weights) + layer5_biases)
+            valid_prediction = tf.nn.softmax(tf.matmul(hidden, layer6_weights) + layer6_biases)
                                 
             correct_prediction = tf.equal(tf.argmax(valid_prediction, 1), tf.argmax(valid_labels, 1))
             valid_accuracy = tf.reduce_mean(tf.cast(correct_prediction, tf.float32))
@@ -212,13 +251,14 @@ for num_steps, learning_rate, batch_size, patch_size, depth, num_hidden in hyper
                 [acc, val, auc_val, s] = sess.run([accuracy, valid_accuracy, auc, summ], feed_dict={tf_train_dataset: batch_data, tf_train_labels: batch_labels})
                 #print('Auc: %.2f, %.2f' % (auc_val[0], auc_val[1]))
                 #writer.add_summary(s, step)
-                                    
+                      
+                auc_now = auc_val[0]                        
                 if step == 0:
                     stopping_auc = 0.0
                     sink_count = 0
                 else:
-                    if auc_val[0] > stopping_auc:
-                        stopping_auc = auc_val[0]
+                    if auc_now > stopping_auc:
+                        stopping_auc = auc_now
                         sink_count = 0
                         if stopping_auc > best_auc:
                             saver.save(sess, os.path.join(folder_path, model_name))
