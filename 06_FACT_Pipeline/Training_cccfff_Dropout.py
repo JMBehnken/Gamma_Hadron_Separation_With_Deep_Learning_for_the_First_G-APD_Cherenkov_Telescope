@@ -5,20 +5,20 @@ import pandas as pd
 import numpy as np
 import random
 import pickle
-import shutil #new
 import gzip
 import time
 import csv
 import os
 
 mc_data_path = '/fhgfs/users/jbehnken/01_Data/01_MC_Data' # Path to preprocessed data
-num_files = 500 # Number of files to load - 1 file = 1000 events
+num_files = 1000 # Number of files to load - 1 file = 1000 events
 events_in_validation = 10000
-number_of_nets = 50
+number_of_nets = 1
+dropout_rate = 0.5
 
 save_model_path = '/fhgfs/users/jbehnken/01_Data/04_Models'
 model_name = 'cccfff'
-title_name = 'Optimization_Run_1'
+title_name = 'Dropout'
 
 file_paths = os.listdir(save_model_path)
 for path in file_paths:
@@ -39,13 +39,8 @@ else:
 
 
 tensorboard_path = os.path.join(folder_path, 'tensorboard') #new
-#tensorboard_path_new = os.path.join(folder_path, 'tensorboard_temporary') #new
-#if os.path.exists(tensorboard_path_new): #new
-#    shutil.rmtree(tensorboard_path_new) #new
-#os.mkdir(tensorboard_path_new) #new
 if not os.path.exists(tensorboard_path): #new
-    os.mkdir(tensorboard_path) #new  
-
+    os.mkdir(tensorboard_path) #new
         
 # Load pickled data and split it into pictures and labels
 def load_data(file):
@@ -77,17 +72,18 @@ valid_labels = lab[p][:events_in_validation]
 train_dataset = pic[p][events_in_validation:]
 train_labels = lab[p][events_in_validation:]
 del p, pic, lab
+print('Data loaded')
 
 # Hyperparameter for the model (fit manually)
 num_labels = 2 # gamma or proton
 num_channels = 1 # it is a greyscale image
 
-num_steps = [100001] * number_of_nets
+num_steps = [1000001] * number_of_nets
 learning_rate = [0.001] * number_of_nets # 0.001
-batch_size = np.random.randint(100, 211, size=number_of_nets) # 100 - 211
+batch_size = np.random.randint(256, 257, size=number_of_nets) # 64 - 256
 patch_size = np.random.randint(0, 2, size=number_of_nets)*2+3 # 3 / 5
-depth = np.random.randint(12, 33, size=number_of_nets) # 8 - 33
-num_hidden = np.random.randint(5, 51, size=number_of_nets) # 5 - 51
+depth = np.random.randint(20, 21, size=number_of_nets) # 4 - 33
+num_hidden = np.random.randint(500, 501, size=number_of_nets) # 4 - 301
 
 hyperparameter = zip(num_steps, learning_rate, batch_size, patch_size, depth, num_hidden)
 
@@ -104,14 +100,15 @@ for num_steps, learning_rate, batch_size, patch_size, depth, num_hidden in hyper
         # Path to logfiles and correct file name
         start = time.time()
         logcount = str(len(os.listdir(tensorboard_path)))
-        hparams = '_bs={}_ps={}_d={}_nh={}_ns={}'.format(batch_size, patch_size, depth, num_hidden, num_steps)
+        hparams = '_bs={}_ps={}_d={}_nh={}_ns={}_Dropout'.format(batch_size, patch_size, depth, num_hidden, num_steps)
     
         # Build the graph
         gpu_config = tf.GPUOptions(allow_growth=True, per_process_gpu_memory_fraction=0.5)
         session_conf = tf.ConfigProto(gpu_options=gpu_config, intra_op_parallelism_threads=18, inter_op_parallelism_threads=18)
         tf.reset_default_graph()
         sess = tf.Session(config=session_conf)
-                        
+        print('Session created')
+        
         # Create tf.variables for the three different datasets
         tf_train_dataset = tf.placeholder(tf.float32, shape=(batch_size, 46, 45, num_channels), name='training_data')
         tf_train_labels = tf.placeholder(tf.float32, shape=(batch_size, num_labels), name='training_labels')
@@ -120,7 +117,8 @@ for num_steps, learning_rate, batch_size, patch_size, depth, num_hidden in hyper
                             
         tf_valid_dataset = tf.constant(valid_dataset, name='validation_data')
         tf_valid_labels = tf.constant(valid_labels, name='validation_labels')
-    
+        print('Datasets created')
+        
         # First layer is a convolution layer
         with tf.name_scope('conv2d_1'):
             layer1_weights = tf.Variable(tf.truncated_normal([patch_size, patch_size, num_channels, depth], stddev=0.1), name='W')
@@ -129,6 +127,7 @@ for num_steps, learning_rate, batch_size, patch_size, depth, num_hidden in hyper
             conv = tf.nn.conv2d(tf_train_dataset, layer1_weights, [1, 1, 1, 1], padding='SAME')
             hidden = tf.nn.relu(conv + layer1_biases)
             pool = tf.nn.max_pool(hidden, ksize=[1, 2, 2, 1], strides=[1, 2, 2, 1], padding='SAME')
+            #pool = tf.nn.dropout(pool, dropout_rate)
     
             tf.summary.histogram("weights", layer1_weights)
             tf.summary.histogram("biases", layer1_biases)
@@ -142,6 +141,7 @@ for num_steps, learning_rate, batch_size, patch_size, depth, num_hidden in hyper
             conv = tf.nn.conv2d(pool, layer2_weights, [1, 1, 1, 1], padding='SAME') 
             hidden = tf.nn.relu(conv + layer2_biases)
             pool = tf.nn.max_pool(hidden, ksize=[1, 2, 2, 1], strides=[1, 2, 2, 1], padding='SAME')
+            #pool = tf.nn.dropout(pool, dropout_rate)
     
             tf.summary.histogram("weights", layer2_weights)
             tf.summary.histogram("biases", layer2_biases)
@@ -155,6 +155,7 @@ for num_steps, learning_rate, batch_size, patch_size, depth, num_hidden in hyper
             conv = tf.nn.conv2d(pool, layer3_weights, [1, 1, 1, 1], padding='SAME') 
             hidden = tf.nn.relu(conv + layer3_biases)
             pool = tf.nn.max_pool(hidden, ksize=[1, 2, 2, 1], strides=[1, 2, 2, 1], padding='SAME')
+            #pool = tf.nn.dropout(pool, dropout_rate)
     
             tf.summary.histogram("weights", layer3_weights)
             tf.summary.histogram("biases", layer3_biases)
@@ -171,17 +172,19 @@ for num_steps, learning_rate, batch_size, patch_size, depth, num_hidden in hyper
             layer4_biases = tf.Variable(tf.constant(1.0, shape=[num_hidden]), name='B')
     
             hidden = tf.nn.relu(tf.matmul(reshape, layer4_weights) + layer4_biases)
+            hidden = tf.nn.dropout(hidden, dropout_rate)
     
             tf.summary.histogram("weights", layer4_weights)
             tf.summary.histogram("biases", layer4_biases)
             tf.summary.histogram("activations", hidden)
-    
-        # Fifth layer is a dense output layer
+            
+        # Fifth layer is a dense layer
         with tf.name_scope('fc_2'):
             layer5_weights = tf.Variable(tf.truncated_normal([num_hidden, num_hidden], stddev=0.1), name='W')
             layer5_biases = tf.Variable(tf.constant(1.0, shape=[num_hidden]), name='B')
     
             hidden = tf.nn.relu(tf.matmul(hidden, layer5_weights) + layer5_biases)
+            hidden = tf.nn.dropout(hidden, dropout_rate)
     
             tf.summary.histogram("weights", layer5_weights)
             tf.summary.histogram("biases", layer5_biases)
@@ -197,6 +200,8 @@ for num_steps, learning_rate, batch_size, patch_size, depth, num_hidden in hyper
             tf.summary.histogram("weights", layer6_weights)
             tf.summary.histogram("biases", layer6_biases)
             tf.summary.histogram("activations", output)
+            
+        print('Layers created')
     
         # Computing the loss of the model
         with tf.name_scope('loss'):
@@ -240,9 +245,10 @@ for num_steps, learning_rate, batch_size, patch_size, depth, num_hidden in hyper
     
         sess.run(tf.global_variables_initializer())
         sess.run(tf.local_variables_initializer())
-        writer = tf.summary.FileWriter(os.path.join(tensorboard_path_new, logcount+hparams)
+        writer = tf.summary.FileWriter(os.path.join(tensorboard_path, logcount+hparams))
         writer.add_graph(sess.graph)
     
+        print('Graph created')
         # Iterating over num_setps
         for step in range(num_steps):
             # Computing the offset to move over the training dataset
@@ -257,7 +263,7 @@ for num_steps, learning_rate, batch_size, patch_size, depth, num_hidden in hyper
             _, l, predictions = sess.run([optimizer, loss, train_prediction], feed_dict=feed_dict)
     
             # Updating the output to stay in touch with the training process
-            if (step % 1000 == 0):
+            if (step % 5000 == 0):
                 [acc, val, auc_val, s] = sess.run([accuracy, valid_accuracy, auc, summ], feed_dict={tf_train_dataset: batch_data, tf_train_labels: batch_labels})
                 writer.add_summary(s, step)
                       
@@ -266,7 +272,7 @@ for num_steps, learning_rate, batch_size, patch_size, depth, num_hidden in hyper
                     stopping_auc = 0.0
                     sink_count = 0
                     if val<0.5:
-                        print('BREAK!')
+                        print('val BREAK!')
                         break
                 else:
                     if auc_now > stopping_auc:
@@ -281,16 +287,7 @@ for num_steps, learning_rate, batch_size, patch_size, depth, num_hidden in hyper
                 if sink_count == 5:
                     break   
     
-        sess.close()
-
-        #if stopping_auc>tensorboard_auc:
-        #    if os.path.exists(tensorboard_path):
-        #        shutil.rmtree(tensorboard_path)
-        #    os.rename(tensorboard_path_new, tensorboard_path)
-        #else:
-        #    if os.path.exists(tensorboard_path_new):
-        #        shutil.rmtree(tensorboard_path_new)
-        
+        sess.close()        
         
         dauer = time.time() - start
         early_stopped = True if step < num_steps-1 else False
@@ -299,4 +296,5 @@ for num_steps, learning_rate, batch_size, patch_size, depth, num_hidden in hyper
             writer.writerow([learning_rate, batch_size, patch_size, depth, num_hidden, val*100, stopping_auc, step, early_stopped, dauer, title_name])
 
     except:
+        print('try except')
         sess.close()

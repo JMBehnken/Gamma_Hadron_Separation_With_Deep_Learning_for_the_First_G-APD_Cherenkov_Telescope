@@ -13,7 +13,7 @@ import os
 mc_data_path = '/fhgfs/users/jbehnken/01_Data/01_MC_Data' # Path to preprocessed data
 num_files = 500 # Number of files to load - 1 file = 1000 events
 events_in_validation = 10000
-number_of_nets = 50
+number_of_nets = 1
 
 save_model_path = '/fhgfs/users/jbehnken/01_Data/04_Models'
 model_name = 'ccfff'
