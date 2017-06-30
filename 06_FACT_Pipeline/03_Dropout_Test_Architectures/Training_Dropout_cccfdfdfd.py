@@ -18,7 +18,7 @@ dropout_rate = 0.5
 
 save_model_path = '/fhgfs/users/jbehnken/01_Data/04_Models'
 model_name = 'cccfff'
-title_name = 'Plotting_cccfdfdf'
+title_name = 'Plotting_cccfdfdfd'
 
 file_paths = os.listdir(save_model_path)
 for path in file_paths:
@@ -80,9 +80,9 @@ num_channels = 1 # it is a greyscale image
 
 num_steps = [100001] * number_of_nets
 learning_rate = [0.001] * number_of_nets # 0.001
-batch_size = np.random.randint(150, 257, size=number_of_nets) # 150 - 257
+batch_size = np.random.randint(128, 257, size=number_of_nets) # 128 - 257
 patch_size = np.random.randint(0, 2, size=number_of_nets)*2+3 # 3 / 5
-depth = np.random.randint(4, 21, size=number_of_nets) # 4 - 20
+depth = np.random.randint(4, 21, size=number_of_nets) # 4 - 21
 num_hidden = np.random.randint(4, 101, size=number_of_nets) # 4 - 101
 
 hyperparameter = zip(num_steps, learning_rate, batch_size, patch_size, depth, num_hidden)
@@ -196,7 +196,7 @@ for num_steps, learning_rate, batch_size, patch_size, depth, num_hidden in hyper
             layer6_biases = tf.Variable(tf.constant(1.0, shape=[num_labels]), name='B')
     
             output = tf.matmul(hidden, layer6_weights) + layer6_biases
-            #output = tf.nn.dropout(output, dropout_rate)
+            output = tf.nn.dropout(output, dropout_rate)
     
             tf.summary.histogram("weights", layer6_weights)
             tf.summary.histogram("biases", layer6_biases)

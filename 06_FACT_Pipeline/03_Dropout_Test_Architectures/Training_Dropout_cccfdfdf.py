@@ -18,7 +18,7 @@ dropout_rate = 0.5
 
 save_model_path = '/fhgfs/users/jbehnken/01_Data/04_Models'
 model_name = 'cccfff'
-title_name = 'Plotting_cdcdcdfdfdf'
+title_name = 'Plotting_cccfdfdf'
 
 file_paths = os.listdir(save_model_path)
 for path in file_paths:
@@ -80,9 +80,9 @@ num_channels = 1 # it is a greyscale image
 
 num_steps = [100001] * number_of_nets
 learning_rate = [0.001] * number_of_nets # 0.001
-batch_size = np.random.randint(128, 257, size=number_of_nets) # 128 - 257
+batch_size = np.random.randint(150, 257, size=number_of_nets) # 150 - 257
 patch_size = np.random.randint(0, 2, size=number_of_nets)*2+3 # 3 / 5
-depth = np.random.randint(4, 21, size=number_of_nets) # 4 - 21
+depth = np.random.randint(4, 21, size=number_of_nets) # 4 - 20
 num_hidden = np.random.randint(4, 101, size=number_of_nets) # 4 - 101
 
 hyperparameter = zip(num_steps, learning_rate, batch_size, patch_size, depth, num_hidden)
@@ -127,7 +127,7 @@ for num_steps, learning_rate, batch_size, patch_size, depth, num_hidden in hyper
             conv = tf.nn.conv2d(tf_train_dataset, layer1_weights, [1, 1, 1, 1], padding='SAME')
             hidden = tf.nn.relu(conv + layer1_biases)
             pool = tf.nn.max_pool(hidden, ksize=[1, 2, 2, 1], strides=[1, 2, 2, 1], padding='SAME')
-            pool = tf.nn.dropout(pool, dropout_rate)
+            #pool = tf.nn.dropout(pool, dropout_rate)
     
             tf.summary.histogram("weights", layer1_weights)
             tf.summary.histogram("biases", layer1_biases)
@@ -141,7 +141,7 @@ for num_steps, learning_rate, batch_size, patch_size, depth, num_hidden in hyper
             conv = tf.nn.conv2d(pool, layer2_weights, [1, 1, 1, 1], padding='SAME') 
             hidden = tf.nn.relu(conv + layer2_biases)
             pool = tf.nn.max_pool(hidden, ksize=[1, 2, 2, 1], strides=[1, 2, 2, 1], padding='SAME')
-            pool = tf.nn.dropout(pool, dropout_rate)
+            #pool = tf.nn.dropout(pool, dropout_rate)
     
             tf.summary.histogram("weights", layer2_weights)
             tf.summary.histogram("biases", layer2_biases)
@@ -155,7 +155,7 @@ for num_steps, learning_rate, batch_size, patch_size, depth, num_hidden in hyper
             conv = tf.nn.conv2d(pool, layer3_weights, [1, 1, 1, 1], padding='SAME') 
             hidden = tf.nn.relu(conv + layer3_biases)
             pool = tf.nn.max_pool(hidden, ksize=[1, 2, 2, 1], strides=[1, 2, 2, 1], padding='SAME')
-            pool = tf.nn.dropout(pool, dropout_rate)
+            #pool = tf.nn.dropout(pool, dropout_rate)
     
             tf.summary.histogram("weights", layer3_weights)
             tf.summary.histogram("biases", layer3_biases)

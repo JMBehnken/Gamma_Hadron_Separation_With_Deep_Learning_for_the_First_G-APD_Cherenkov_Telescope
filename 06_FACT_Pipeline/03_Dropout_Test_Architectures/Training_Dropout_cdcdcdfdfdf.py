@@ -13,12 +13,12 @@ import os
 mc_data_path = '/fhgfs/users/jbehnken/01_Data/01_MC_Data' # Path to preprocessed data
 num_files = 200 # Number of files to load - 1 file = 1000 events
 events_in_validation = 10000
-number_of_nets = 20
+number_of_nets = 50
 dropout_rate = 0.5
 
 save_model_path = '/fhgfs/users/jbehnken/01_Data/04_Models'
 model_name = 'cccfff'
-title_name = 'Plotting_cdcdcdfdfdfd'
+title_name = 'Plotting_cdcdcdfdfdf'
 
 file_paths = os.listdir(save_model_path)
 for path in file_paths:
@@ -196,7 +196,7 @@ for num_steps, learning_rate, batch_size, patch_size, depth, num_hidden in hyper
             layer6_biases = tf.Variable(tf.constant(1.0, shape=[num_labels]), name='B')
     
             output = tf.matmul(hidden, layer6_weights) + layer6_biases
-            output = tf.nn.dropout(output, dropout_rate)
+            #output = tf.nn.dropout(output, dropout_rate)
     
             tf.summary.histogram("weights", layer6_weights)
             tf.summary.histogram("biases", layer6_biases)
