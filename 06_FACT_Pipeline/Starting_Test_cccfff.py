@@ -11,14 +11,14 @@ import csv
 import os
 
 mc_data_path = '/fhgfs/users/jbehnken/01_Data/01_MC_Data' # Path to preprocessed data
-num_files = 500 # Number of files to load - 1 file = 1000 events
+num_files = 100 # Number of files to load - 1 file = 1000 events
 events_in_validation = 10000
-number_of_nets = 200
+number_of_nets = 10
 dropout_rate = 0.5
 
 save_model_path = '/fhgfs/users/jbehnken/01_Data/04_Models'
 model_name = 'cccfff'
-title_name = 'Loading_cccfff'
+title_name = 'Starting_Test'
 
 file_paths = os.listdir(save_model_path)
 for path in file_paths:
@@ -80,10 +80,10 @@ num_channels = 1 # it is a greyscale image
 
 num_steps = [101] * number_of_nets
 learning_rate = [0.001] * number_of_nets # 0.001
-batch_size = np.random.randint(64, 257, size=number_of_nets) # 128 - 257
+batch_size = np.random.randint(256, 257, size=number_of_nets) # 64 - 257
 patch_size = np.random.randint(0, 2, size=number_of_nets)*2+3 # 3 / 5
-depth = np.random.randint(4, 100, size=number_of_nets) # 4 - 33
-num_hidden = np.random.randint(4, 200, size=number_of_nets) # 4 - 301
+depth = np.random.randint(30, 31, size=number_of_nets) # 4 - 100
+num_hidden = np.random.randint(100, 101, size=number_of_nets) # 4 - 200
 
 hyperparameter = zip(num_steps, learning_rate, batch_size, patch_size, depth, num_hidden)
 
@@ -96,6 +96,12 @@ else:
     tensorboard_auc = 0
 
 for num_steps, learning_rate, batch_size, patch_size, depth, num_hidden in hyperparameter:
+    val = 0
+    stopping_auc = 0
+    step = 0
+    dauer = 0
+    early_stopped = False
+    
     try:
         # Path to logfiles and correct file name
         start = time.time()
@@ -103,7 +109,7 @@ for num_steps, learning_rate, batch_size, patch_size, depth, num_hidden in hyper
         hparams = '_bs={}_ps={}_d={}_nh={}_ns={}_do={}'.format(batch_size, patch_size, depth, num_hidden, num_steps, dropout_rate)
     
         # Build the graph
-        gpu_config = tf.GPUOptions(allow_growth=True, per_process_gpu_memory_fraction=0.25)
+        gpu_config = tf.GPUOptions(allow_growth=True, per_process_gpu_memory_fraction=0.8)
         session_conf = tf.ConfigProto(gpu_options=gpu_config, intra_op_parallelism_threads=18, inter_op_parallelism_threads=18)
         tf.reset_default_graph()
         sess = tf.Session(config=session_conf)
@@ -266,41 +272,28 @@ for num_steps, learning_rate, batch_size, patch_size, depth, num_hidden in hyper
             # Updating the output to stay in touch with the training process
             if (step % 100 == 0):
                 [acc, val, auc_val, s] = sess.run([accuracy, valid_accuracy, auc, summ], feed_dict={tf_train_dataset: batch_data, tf_train_labels: batch_labels})
-                writer.add_summary(s, step)
-                      
-                auc_now = auc_val[0]                        
-                if step == 0:
-                    stopping_auc = 0.0
-                    sink_count = 0
-                    
-                else:
-                    if auc_now > stopping_auc:
-                        stopping_auc = auc_now
-                        sink_count = 0
-                        if stopping_auc > best_auc:
-                            saver.save(sess, os.path.join(folder_path, model_name))
-                            best_auc = stopping_auc
-                    else:
-                        sink_count += 1
-                print('St_auc: {}, sc: {},val: {}, Step: {}'.format(stopping_auc, sink_count, val*100, step))
-                if sink_count == 5:
-                    break   
+                #writer.add_summary(s, step)      
+                       
+                print('Step: {}'.format(step))
+                val = 2
+                stopping_auc = 2
+                step = 2
+                dauer = 2
+                early_stopped = True
     
-        sess.close()        
-        
-        dauer = time.time() - start
-        early_stopped = False
+        sess.close()
 
     except:
-        early_stopped = True
-        val = 0
-        stopping_auc = 0
-        step = 0
-        dauer = 0
+        #raise
+        val = 1
+        stopping_auc = 1
+        step = 1
+        dauer = 1
+        early_stopped = False
         print('try except')
         sess.close()
     finally:
         with open(os.path.join(folder_path, model_name+'_Hyperparameter.csv'), 'a') as f:
             writer = csv.writer(f)
-            writer.writerow([learning_rate, batch_size, patch_size, depth, num_hidden, val*100, stopping_auc, step, early_stopped, dauer, title_name])
+            writer.writerow([learning_rate, batch_size, patch_size, depth, num_hidden, val, stopping_auc, step, early_stopped, dauer, title_name])
 
