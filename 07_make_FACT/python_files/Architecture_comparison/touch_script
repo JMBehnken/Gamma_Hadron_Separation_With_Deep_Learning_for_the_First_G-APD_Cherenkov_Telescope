@@ -1,0 +1,6 @@
+touch /home/jbehnken/07_make_FACT/hexagonal_to_quadratic_mapping_dict.p;
+touch /fhgfs/users/jbehnken/make_Data/Crab1314_preprocessed_images.h5;
+touch /fhgfs/users/jbehnken/make_Data/MC_preprocessed_images.h5;
+touch /fhgfs/users/jbehnken/make_Data/MC_diffuse_flat_preprocessed_images.h5;
+touch /home/jbehnken/07_make_FACT/Architecture_comparison.flag;
+touch /fhgfs/users/jbehnken/make_Data/Theta_preprocessed.h5
