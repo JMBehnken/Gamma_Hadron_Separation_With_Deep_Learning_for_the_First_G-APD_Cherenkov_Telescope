@@ -270,7 +270,7 @@ num_events = 800000
 events_in_validation_and_testing = 5000
 
 # Number of nets to compute
-number_of_nets = 10
+number_of_nets = 30
 
 trainable = True
 
