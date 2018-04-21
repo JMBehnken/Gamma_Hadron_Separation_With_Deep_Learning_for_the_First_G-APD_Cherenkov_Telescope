@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="135mm"
+   height="75mm"
+   viewBox="0 0 135 75"
+   version="1.1"
+   id="svg4491"
+   inkscape:version="0.92.1 r15371"
+   sodipodi:docname="Air_Shower.svg">
+  <defs
+     id="defs4485">
+    <marker
+       inkscape:stockid="Arrow1Lend"
+       orient="auto"
+       refY="0.0"
+       refX="0.0"
+       id="marker5608"
+       style="overflow:visible;"
+       inkscape:isstock="true">
+      <path
+         id="path5606"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1;fill:#000000;fill-opacity:1"
+         transform="scale(0.8) rotate(180) translate(12.5,0)" />
+    </marker>
+    <marker
+       inkscape:isstock="true"
+       style="overflow:visible;"
+       id="marker5580"
+       refX="0.0"
+       refY="0.0"
+       orient="auto"
+       inkscape:stockid="Arrow1Lend">
+      <path
+         transform="scale(0.8) rotate(180) translate(12.5,0)"
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1;fill:#000000;fill-opacity:1"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         id="path5578" />
+    </marker>
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="2"
+     inkscape:cx="250.57089"
+     inkscape:cy="148.01687"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     width="100mm"
+     inkscape:window-width="1366"
+     inkscape:window-height="719"
+     inkscape:window-x="0"
+     inkscape:window-y="25"
+     inkscape:window-maximized="1"
+     inkscape:snap-bbox="true"
+     inkscape:bbox-paths="true"
+     inkscape:object-paths="true"
+     inkscape:snap-intersection-paths="true"
+     inkscape:snap-smooth-nodes="true" />
+  <metadata
+     id="metadata4488">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(0,-222)">
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:1.25;font-family:'Latin Modern Roman';-inkscape-font-specification:'Latin Modern Roman, ';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       x="10.514749"
+       y="236.97023"
+       id="text7916"><tspan
+         sodipodi:role="line"
+         id="tspan7914"
+         x="10.514749"
+         y="236.97023"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52777767px;font-family:'Latin Modern Roman';-inkscape-font-specification:'Latin Modern Roman, ';stroke-width:0.26458332">atmosphere</tspan></text>
+    <g
+       id="g4683"
+       transform="translate(1e-6)">
+      <g
+         transform="translate(-0.6315772)"
+         id="g4631">
+        <path
+           style="fill:none;stroke:#007fff;stroke-width:0.5;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+           d="M 3.4736844,238.3421 H 58.421052"
+           id="path4612"
+           inkscape:connector-curvature="0" />
+        <path
+           style="fill:none;stroke:#007fff;stroke-width:0.5;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+           d="M 77.842109,238.34211 H 132.78947"
+           id="path4612-3"
+           inkscape:connector-curvature="0" />
+      </g>
+      <g
+         id="g4674">
+        <path
+           style="opacity:1;vector-effect:none;fill:none;fill-opacity:1;stroke:#769d06;stroke-width:0.50000001;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:1.00000003,1.00000003;stroke-dashoffset:0;stroke-opacity:1"
+           d="M 58.894735,241.63662 32.052629,289.00504"
+           id="path4633"
+           inkscape:connector-curvature="0" />
+        <path
+           style="opacity:1;vector-effect:none;fill:none;fill-opacity:1;stroke:#769d06;stroke-width:0.50000001;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:1.00000003,1.00000003;stroke-dashoffset:0;stroke-opacity:1"
+           d="m 76.105262,241.63662 26.842108,47.36842"
+           id="path4633-7"
+           inkscape:connector-curvature="0" />
+      </g>
+      <path
+         inkscape:connector-curvature="0"
+         id="path4668"
+         d="M 2.8421052,294.01502 H 132.15789"
+         style="fill:none;stroke:#769d06;stroke-width:0.5;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+    </g>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:1.25;font-family:'Latin Modern Roman';-inkscape-font-specification:'Latin Modern Roman, ';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       x="10.514749"
+       y="292.66501"
+       id="text7916-5"><tspan
+         sodipodi:role="line"
+         id="tspan7914-3"
+         x="10.514749"
+         y="292.66501"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52777767px;font-family:'Latin Modern Roman';-inkscape-font-specification:'Latin Modern Roman, ';stroke-width:0.26458332">ground-level</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:1.25;font-family:'Latin Modern Roman';-inkscape-font-specification:'Latin Modern Roman, ';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       x="89.228287"
+       y="260.38586"
+       id="text7916-56"><tspan
+         sodipodi:role="line"
+         id="tspan7914-2"
+         x="89.228287"
+         y="260.38586"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52777767px;font-family:'Latin Modern Roman';-inkscape-font-specification:'Latin Modern Roman, ';stroke-width:0.26458332">Cherenkov light cone</tspan></text>
+    <path
+       id="path4789"
+       style="fill:none;stroke:#ee810a;stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
+       d="m 90.083192,279.88139 1.028988,-3.08697 0.841901,1.44994 m -6.64165,8.18513 1.683798,-6.17393 1.637028,2.99342 m -3.788548,-7.39 -1.637025,4.25627 m -1.075758,-7.62387 0.935442,1.49671 m -8.933484,-4.5369 3.975634,-6.31424 -1.028987,8.55931 m -0.935446,13.18975 0.467725,1.35639 m -1.471144,-7.49865 1.003421,6.14226 -1.122531,1.91766 m 0.11911,-8.05992 -4.936644,11.6146 m -0.222731,-23.12397 -1.180433,9.65359 m -1.216078,-2.47893 -2.572467,-7.15614 -2.057976,3.83532 m 5.612658,-13.00266 0.795128,5.65943 m -0.795128,-5.65943 1.590254,1.1693 m -4.677217,-11.9269 -0.654809,7.10937 m 0.654809,-7.10937 -2.666013,2.47892 m -0.327406,29.13906 1.870888,9.72861 m -2.151521,-30.21482 1.449938,3.55469 m -14.4526,23.19899 -4.443354,5.75298 m 8.185129,-11.83336 1.824114,2.57247 m -3.975634,-9.49475 -0.889561,1.9975 m 5.566778,-2.65231 -1.683798,3.18051 m 3.648228,-7.20292 -1.96443,4.02241 2.432153,4.95785 m -2.432153,-13.2833 -0.09354,4.30304 m -6.548108,6.64165 0.654809,4.2095 m -6.361014,0.84189 0.654812,4.02241 m -0.280633,-8.79317 -2.432153,2.89988 m 6.735191,-10.85114 -4.303038,7.95126 -0.374179,4.77076 -5.051393,6.82874 m 14.592916,-29.18583 -4.864306,9.63507 1.028988,7.67063 -3.461141,7.48355 m 14.03165,-33.76951 -6.735191,8.98026 2.80633,6.36101 -4.677217,8.98026 2.15152,6.92228 -3.741775,6.08038 2.057977,4.2095 m 36.48229,-22.26355 3.367595,9.63506 m -9.822153,-19.55076 6.454558,9.9157 -2.899876,8.69962 2.15152,4.39658 m -12.516024,-29.29306 6.809822,6.28116 -3.180509,5.89329 4.022408,9.35443 -2.33861,5.51912 m -11.927692,-40.01258 -2.384592,9.33004 3.086963,10.7576 -3.554682,9.16734 m 2.852311,-29.25498 -8.464973,9.8913 2.806329,10.57051 -4.77076,9.0738 5.051393,11.41241 -3.741771,7.39 m 9.119782,-48.33802 6.614583,12.96458 -4.497916,16.27188 5.159375,11.50937 4.894791,6.35 M 67.865624,224.10729 v 13.89063" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:1.25;font-family:'Latin Modern Roman';-inkscape-font-specification:'Latin Modern Roman, ';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       x="69.384537"
+       y="227.84212"
+       id="text7916-56-9"><tspan
+         sodipodi:role="line"
+         id="tspan7914-2-1"
+         x="69.384537"
+         y="227.84212"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52777767px;font-family:'Latin Modern Roman';-inkscape-font-specification:'Latin Modern Roman, ';stroke-width:0.26458332">cosmic radiation</tspan></text>
+  </g>
+</svg>

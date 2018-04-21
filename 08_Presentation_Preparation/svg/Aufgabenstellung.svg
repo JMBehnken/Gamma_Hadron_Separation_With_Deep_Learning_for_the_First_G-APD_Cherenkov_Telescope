@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+    "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd" >
+<svg contentScriptType="text/ecmascript" width="571.0"
+     xmlns:xlink="http://www.w3.org/1999/xlink" zoomAndPan="magnify"
+     contentStyleType="text/css"
+     viewBox="0.000000 -45.000000 571.000000 112.000000" height="112.0"
+     preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg"
+     version="1.1">
+    <g id="edges">
+        <path fill="none" stroke-width="5.0"
+              d="M 105.408249,13.914176 C 117.615372,8.930537 143.401505,19.765762 148.385147,31.972885"
+              class="0 11" stroke-opacity="0.49803922" stroke="#eeb67a"/>
+        <path fill="none" stroke-width="5.0"
+              d="M 106.560547,50.779694 C 111.164108,38.653412 136.258865,27.369324 148.385147,31.972885"
+              class="1 11" stroke-opacity="0.49803922" stroke="#eeb67a"/>
+        <path fill="none" stroke-width="5.0"
+              d="M 148.385147,31.972885 C 146.364502,18.371975 163.734924,-5.060344 177.335831,-7.080981"
+              class="11 2" stroke-opacity="0.49803922" stroke="#769d06"/>
+        <path fill="none" stroke-width="5.0"
+              d="M 148.385147,31.972885 C 167.935989,21.982651 212.247604,36.323570 222.237839,55.874413"
+              class="11 3" stroke-opacity="0.49803922" stroke="#769d06"/>
+        <path fill="none" stroke-width="5.0"
+              d="M 177.335831,-7.080981 C 180.894897,-21.741316 208.224014,-38.393219 222.884338,-34.834148"
+              class="2 5" stroke-opacity="0.49803922" stroke="#ee810a"/>
+        <path fill="none" stroke-width="5.0"
+              d="M 222.237839,55.874413 C 232.565491,36.265091 277.470947,22.342581 297.080261,32.670231"
+              class="3 6" stroke-opacity="0.49803922" stroke="#ee810a"/>
+        <path fill="none" stroke-width="5.0"
+              d="M 353.273224,4.913525 C 367.587585,2.614062 392.508362,20.636440 394.807831,34.950821"
+              class="4 7" stroke-opacity="0.49803922" stroke="#eeb67a"/>
+        <path fill="none" stroke-width="5.0"
+              d="M 222.884338,-34.834148 C 237.192230,-37.566177 262.752106,-20.202391 265.484131,-5.894503"
+              class="5 9" stroke-opacity="0.49803922" stroke="#769d06"/>
+        <path fill="none" stroke-width="5.0"
+              d="M 265.484131,-5.894503 C 279.516296,-4.500782 298.473999,18.638058 297.080261,32.670231"
+              class="9 6" stroke-opacity="0.49803922" stroke="#ee810a"/>
+        <path fill="none" stroke-width="5.0"
+              d="M 297.080261,32.670231 C 313.488892,25.934448 348.205505,40.443714 354.941284,56.852341"
+              class="6 10" stroke-opacity="0.49803922" stroke="#769d06"/>
+        <path fill="none" stroke-width="5.0"
+              d="M 354.941284,56.852341 C 358.534271,44.498730 382.454224,31.357813 394.807831,34.950821"
+              class="10 7" stroke-opacity="0.49803922" stroke="#ee810a"/>
+        <path fill="none" stroke-width="5.0"
+              d="M 394.807831,34.950821 C 408.953278,21.155033 450.865112,21.679508 464.660889,35.824944"
+              class="7 8" stroke-opacity="0.49803922" stroke="#769d06"/>
+    </g>
+    <g id="nodes">
+        <circle fill="#eeb67a" fill-opacity="1.0" r="10.0" class="0"
+                cx="105.40825" cy="13.914176"/>
+        <circle fill="#eeb67a" fill-opacity="1.0" r="10.0" class="1"
+                cx="106.56055" cy="50.779694"/>
+        <circle fill="#ee810a" fill-opacity="1.0" r="10.0" class="2"
+                cx="177.33583" cy="-7.080981"/>
+        <circle fill="#ee810a" fill-opacity="1.0" r="10.0" class="3"
+                cx="222.23784" cy="55.874413"/>
+        <circle fill="#eeb67a" fill-opacity="1.0" r="10.0" class="4"
+                cx="353.27322" cy="4.9135246"/>
+        <circle fill="#769d06" fill-opacity="1.0" r="10.0" class="5"
+                cx="222.88434" cy="-34.83415"/>
+        <circle fill="#769d06" fill-opacity="1.0" r="10.0" class="6"
+                cx="297.08026" cy="32.67023"/>
+        <circle fill="#769d06" fill-opacity="1.0" r="10.0" class="7"
+                cx="394.80783" cy="34.95082"/>
+        <circle fill="#ee810a" fill-opacity="1.0" r="10.0" class="8"
+                cx="464.6609" cy="35.824944"/>
+        <circle fill="#ee810a" fill-opacity="1.0" r="10.0" class="9"
+                cx="265.48413" cy="-5.8945026"/>
+        <circle fill="#ee810a" fill-opacity="1.0" r="10.0" class="10"
+                cx="354.94128" cy="56.85234"/>
+        <circle fill="#769d06" fill-opacity="1.0" r="10.0" class="11"
+                cx="148.38515" cy="31.972885"/>
+        <circle fill="#000000" fill-opacity="1.0" r="10.0" class="12"
+                cx="560.9352" cy="24.77481"/>
+    </g>
+    <g id="node-labels">
+        <text font-size="10" x="105.40825" y="15.6841955" fill="#000000"
+              style="text-anchor: middle; dominant-baseline: central;"
+              font-family="Liberation Sans" class="0">
+            MC Data
+        </text>
+        <text font-size="10" x="106.56055" y="52.61563" fill="#000000"
+              style="text-anchor: middle; dominant-baseline: central;"
+              font-family="Liberation Sans" class="1">
+            Crab Data
+        </text>
+        <text font-size="10" x="177.33583" y="-4.8161697" fill="#000000"
+              style="text-anchor: middle; dominant-baseline: central;"
+              font-family="Liberation Sans" class="2">
+            MC Images
+        </text>
+        <text font-size="10" x="222.23784" y="58.205143" fill="#000000"
+              style="text-anchor: middle; dominant-baseline: central;"
+              font-family="Liberation Sans" class="3">
+            Crab Images
+        </text>
+        <text font-size="10" x="353.27322" y="6.749462" fill="#000000"
+              style="text-anchor: middle; dominant-baseline: central;"
+              font-family="Liberation Sans" class="4">
+            Crab Theta-Values
+        </text>
+        <text font-size="10" x="222.88434" y="-32.503418" fill="#000000"
+              style="text-anchor: middle; dominant-baseline: central;"
+              font-family="Liberation Sans" class="5">
+            Parameter Optimization
+        </text>
+        <text font-size="10" x="297.08026" y="35.00096" fill="#000000"
+              style="text-anchor: middle; dominant-baseline: central;"
+              font-family="Liberation Sans" class="6">
+            Predicting
+        </text>
+        <text font-size="10" x="394.80783" y="37.28155" fill="#000000"
+              style="text-anchor: middle; dominant-baseline: central;"
+              font-family="Liberation Sans" class="7">
+            Merging
+        </text>
+        <text font-size="10" x="464.6609" y="37.66088" fill="#000000"
+              style="text-anchor: middle; dominant-baseline: central;"
+              font-family="Liberation Sans" class="8">
+            Theta-Plot
+        </text>
+        <text font-size="10" x="265.48413" y="-4.058565" fill="#000000"
+              style="text-anchor: middle; dominant-baseline: central;"
+              font-family="Liberation Sans" class="9">
+            Best Model
+        </text>
+        <text font-size="10" x="354.94128" y="58.68828" fill="#000000"
+              style="text-anchor: middle; dominant-baseline: central;"
+              font-family="Liberation Sans" class="10">
+            Crab Prediction
+        </text>
+        <text font-size="10" x="148.38515" y="34.303616" fill="#000000"
+              style="text-anchor: middle; dominant-baseline: central;"
+              font-family="Liberation Sans" class="11">
+            Preprocessing
+        </text>
+        <text font-size="10" x="560.9352" y="26.415436" fill="#000000"
+              style="text-anchor: middle; dominant-baseline: central;"
+              font-family="Liberation Sans" class="12">
+            test
+        </text>
+    </g>
+</svg>
